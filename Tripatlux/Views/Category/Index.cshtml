@@ -1,0 +1,43 @@
+﻿@section CSSHeadSection {
+    <link href="~/Content/css/app.css" rel="stylesheet" />
+    <link href="~/Content/css/category.css" rel="stylesheet" />
+}
+
+<span class="page-title">Préparez votre sortie...</span>
+<ul id="categories">
+    <li>
+        <a href="@Url.Action("Movies", "Category")" class="category-movie">
+            <span>
+                Cinéma<br />
+                Film
+            </span>
+        </a>
+    </li>
+    <li>
+        <a href="@Url.Action("Salle", "Category")" class="category-concert">
+            <span>
+                Salle de spectable<br />
+                Concert
+            </span>
+        </a>
+    </li>
+    <li>
+        <a href="@Url.Action("NightClubs", "Category")" class="category-nightclub">
+            <span>
+                Boite de nuit
+            </span>
+        </a>
+    </li>
+    <li>
+        <a href="@Url.Action("Bars", "Category")" class="category-bar">
+            <span>
+                Café<br />
+                Pub
+            </span>
+        </a>
+    </li>
+</ul>
+
+@section JSBottomSection {
+    <script src="~/Content/js/category.js"></script>
+}

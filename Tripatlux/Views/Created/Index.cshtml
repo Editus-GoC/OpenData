@@ -1,0 +1,163 @@
+﻿@using Tripatlux.Models.ViewModels
+@model TripViewModel
+
+@section CSSHeadSection {
+    <link href="~/Content/css/app.css" rel="stylesheet" />
+    <link href="~/Content/css/created.css" rel="stylesheet" />
+    <link href="~/Content/css/picker.css" rel="stylesheet" />
+    <link href="~/Content/css/picker.css.date.css" rel="stylesheet" />
+    <link href="~/Content/css/picker.css.time.css" rel="stylesheet" />
+}
+
+<span class="page-title">Je propose un trajet</span>
+
+<form action="@Url.Action("Index", "Created")" method="post">
+
+    <div class="subcontent">
+        <span class="page-subtitle">Départ et arrivée</span>
+        <div class="mdl-list">
+            <div class="mdl-list__item">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="text" class="mdl-textfield__input" id="start" name="AddressStart" value="@Model.AddressStart" />
+                    <label class="mdl-textfield__label" for="start">De :</label>
+                </div>
+            </div>
+            <ol id="intermediate-steps" data-step-label="Etape">
+                @if (Model.Steps != null && Model.Steps.Count > 0)
+                {
+                    int count = 0;
+                    foreach (var item in Model.Steps)
+                    {
+                        <li>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input type="text" class="mdl-textfield__input" id="step-@count" name="Steps[@count]" value="@Model.Steps[count]" />
+                                <label class="mdl-textfield__label" for="step-@count'">
+                                    Etape @(count + 1)
+                                </label>
+                            </div>
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent float-right detele-button">
+                                Supprimer
+                            </button>
+                            <div class="clear"></div>
+                        </li>
+                        count++;
+                    }
+                }
+            </ol>
+            <div class="clear"></div>
+            <button id="add-step" class="mdl-button mdl-js-button mdl-button--raised float-right">
+                Ajouter une étape
+            </button>
+            <div class="clear"></div>
+            <div class="mdl-list__item">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input type="text" class="mdl-textfield__input adresse-ajax-check" id="end" name="AddressEnd" value="@Model.AddressEnd" />
+                    <label class="mdl-textfield__label" for="end">à :</label>
+                </div>
+            </div>
+
+            <div id="check-address-list-loader">
+                <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+            </div>
+
+            <div id="check-address-list-title" class="align-center">Voulez-vous vous rendre ici ?</div>
+            <ul id="check-address-list"></ul>
+
+            <div id="gmap-data-title" class="align-center">Informations sur votre trajet</div>
+            <div id="gmap-data-distance" class="align-center"></div>
+            <div id="gmap-data-duration" class="align-center"></div>
+            <div class="clear"></div>
+            <input type="hidden" id="duration" name="duration" />
+
+        </div>
+        <input type="hidden" name="idtiers" id="id-tiers" value="@Model.IdTiers" />
+    </div>
+
+    <div class="subcontent">
+        <span class="page-subtitle">Date et heure</span>
+        <div class="mdl-list">
+
+            <div class="mdl-list__item">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="date" name="Date">
+                    <label class="mdl-textfield__label" for="date">Date</label>
+                </div>
+            </div>
+
+            <div class="mdl-list__item">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="hour" name="Hours" value="@Model.Hours.ToString("HH:mm")">
+                    <label class="mdl-textfield__label" for="hour">Heure</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="subcontent">
+        <span class="page-subtitle">Informations supplémentaires</span>
+        <div class="mdl-list">
+            <div class="mdl-list__item">
+                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="round-trip">
+                    <input type="checkbox" id="round-trip" class="mdl-switch__input" name="RoundTrip" @(Model.RoundTrip == "on" ? "checked" : "")>
+                    <span class="mdl-switch__label">Aller/Retour</span>
+                </label>
+            </div>
+
+            <div id="comeback-hour-block" class="mdl-list__item" style="display:@(Model.Trip.RoundTrip ? "block" : "none");">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="comeback-hour" name="HoursReturn" value="@Model.HoursReturn.ToString("HH:mm")">
+                    <label class="mdl-textfield__label" for="comeback-hour">Heure de retour</label>
+                </div>
+            </div>
+
+            <div class="mdl-list__item">
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="recurrence-1">
+                    <input type="radio" id="recurrence-1" class="mdl-radio__button" name="Recurrence" value="0" @(!Model.Trip.Recurrence ? "checked" : "")>
+                    <span class="mdl-radio__label">Trajet occasionnel</span>
+                </label>
+                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="recurrence-2">
+                    <input type="radio" id="recurrence-2" class="mdl-radio__button" name="Recurrence" value="1" @(Model.Trip.Recurrence ? "checked" : "")>
+                    <span class="mdl-radio__label">Trajet récurrent</span>
+                </label>
+            </div>
+
+            <div class="mdl-list__item">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="car-seat" name="Trip.NbPassagers" value="@Model.Trip.NbPassagers">
+                    <label class="mdl-textfield__label" for="car-seat">Nombre de sièges</label>
+                    <span class="mdl-textfield__error">Veuillez entrer des chiffres uniquement</span>
+                </div>
+            </div>
+
+            <div class="mdl-list__item">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="price" name="Trip.DefaultCost" value="@Model.Trip.DefaultCost">
+                    <label class="mdl-textfield__label" for="price">Prix</label>
+                    <span class="mdl-textfield__error">Veuillez entrer des chiffres uniquement</span>
+                </div>
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <textarea class="mdl-textfield__input" type="text" rows="3" id="comment" name="Trip.Comment">@Model.Trip.Comment</textarea>
+                <label class="mdl-textfield__label" for="comment">Commentaire...</label>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="align-center">
+        <button id="submit-route" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+            Valider le trajet
+        </button>
+    </div>
+
+</form>
+
+@section JSBottomSection {
+    <script src="~/Content/js/picker.js"></script>
+    <script src="~/Content/js/picker.date.js"></script>
+    <script src="~/Content/js/picker.time.js"></script>
+    <script src="~/Content/js/picker.fr_FR.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCta3Rfy6fLAfzzb8OrqQKNfISBSefH8Rk&signed_in=true&callback=initGMap" async defer></script>
+    <script src="~/Content/js/created.js"></script>
+}

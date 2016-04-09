@@ -1,0 +1,52 @@
+﻿@using Tripatlux.Models.ViewModels
+@model PaiementViewModel
+
+
+@section CSSHeadSection {
+    <link href="~/Content/css/app.css" rel="stylesheet" />
+    <link href="~/Content/css/paiement.css" rel="stylesheet" />
+}
+
+
+<section id="section-paiement">
+    <span class="page-title">Paiement de votre trajet</span>
+    <div id="to-pay">
+        <form method="post" action="@Url.Action("PaiementResult", "Find", new { idTrip = Model.IdTrip, nbPlace = Model.NbPlace })">
+            <div class="subcontent">
+                <span class="page-subtitle">A payer</span>
+                <div id="value-to-pay">@Model.NbPlace Place x @Model.Trip.DefaultCost € = @(Model.NbPlace * Model.Trip.DefaultCost)€</div> @*TODO cost*@
+                <div class="mdl-list">
+                    <div class="mdl-list__item">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="cb" name="cb" value="0000 0000 0000 0000" />
+                            <label class="mdl-textfield__label" for="cb">N° carte bancaire</label>
+                        </div>
+                    </div>
+                    <div class="mdl-list__item">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="expire" name="expire" value="03/01/2017" />
+                            <label class="mdl-textfield__label" for="hour">Expire le</label>
+                        </div>
+                    </div>
+                    <div class="mdl-list__item">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" id="code" name="code" value="000" />
+                            <label class="mdl-textfield__label" for="code">Code écurisé</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="align-center">
+                    <button id="submit-route" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                        Payer
+                    </button>
+                </div>
+            </div>        
+        </form>        
+    </div>
+    <div id="pay-with-cb">
+
+    </div>
+    <div id="pay-with-paypal">
+        <a href="@Url.Action("PaiementResult", "Find", new { idTrip = Model.IdTrip, nbPlace = Model.NbPlace })">Payer avec Paypal</a>
+    </div>
+</section>

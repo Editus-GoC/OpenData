@@ -1,0 +1,56 @@
+﻿@using Tripatlux.Models.DataTrip
+@using Tripatlux.Helpers
+@model Trip
+
+<li class="result-co">
+    <a href="@Url.Action("InfoCo", "Find", new { id = Model.Id })">
+    <span class="color"></span>
+    <div class="result-block-route">
+        <div class="result-block-1">
+            <div class="hours-block">
+                <span class="hours-start">@Model.DateStart.ToString("HH")h@(Model.DateStart.ToString("mm"))</span>
+                <img class="deco-arrow" src="~/Content/images/results-list/arrow.png" alt="" width="6" height="9" />
+                <span class="hours-end">@Model.DateEnd.ToString("HH")h@(Model.DateEnd.ToString("mm"))</span>
+            </div>
+            <div class="route-block">
+                <span class="route-start">@Model.FirstStep.GetCity()</span>
+                <img class="deco-arrow" src="~/Content/images/results-list/arrow.png" alt="" width="6" height="9" />
+                <span class="route-end">@Model.LastStep.GetCity()</span>
+            </div>
+            <div class="nb-square">@Model.NbFreePlace place@(Model.NbFreePlace > 1 ? "s" : "") restante@(Model.NbFreePlace > 1 ? "s" : "")</div>
+        </div>
+        <div class="result-block-2">
+            <span class="price">@Model.DefaultCost€</span>
+            <span class="time">@Model.DurationStr</span>
+            <span class="km">@(Model.GetKm(SessionHelper.LastSearchResult.Request.LocationStartAddress, SessionHelper.LastSearchResult.Request.LocationEndAddress))km</span>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="result-block-driver">
+        <div class="photo-driver">
+            @if (Model.Driver.Avatar == null)
+            {
+                <img src="~/Content/images/app/no-photo-driver.png" alt="Photo conducteur" width="30" height="30" />
+            }
+            else
+            {
+                <img src="@Url.Action("Avatar", "Account", new { idUser = Model.Driver.Id })" alt="Photo conducteur" width="30" height="30" />
+            }
+        </div>
+        <div class="infos-driver-1">
+            <div>
+                <span class="infos-driver-name">@Model.Driver.FirstName @Model.Driver.Name.ToUpper()[0].</span>
+                <span class="infos-driver-old">@((int)((DateTime.Now - Model.Driver.DateBirthday).TotalDays / 365)) ans</span>
+            </div>
+            <div class="block-note">
+                <span class="note">@Model.Driver.Note</span> -
+                <span class="notice">@Model.Driver.Avis.Count() avis</span>
+            </div>
+        </div>
+        <div class="infos-driver-2">
+            <span class="skill">Ambassadeur</span>
+        </div>
+        <div class="clear"></div>
+    </div>
+    </a>
+</li>

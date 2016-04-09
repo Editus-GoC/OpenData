@@ -1,0 +1,15 @@
+﻿@using Tripatlux.Models
+@using Tripatlux.Models.DataTrip
+@model List<Item>
+
+@foreach (var item in Model)
+{
+    if (item is Trip)
+    {
+        Html.RenderPartial("_TripItemResult", item);
+    }
+    else
+    {
+        Html.RenderPartial("_ParcoursItemResult", item);
+    }
+}

@@ -1,0 +1,104 @@
+﻿@using Tripatlux.Models.DataTrip
+@using Tripatlux.Models
+@using Tripatlux.Helpers
+@model Trip
+
+
+@section CSSHeadSection {
+    <link href="~/Content/css/app.css" rel="stylesheet" />
+    <link href="~/Content/css/timeline.css" rel="stylesheet" />
+    <link href="~/Content/css/informations.css" rel="stylesheet" />
+}
+
+@section JSBottomSection {
+    <script src="~/Content/js/timeline.js"></script>
+}
+
+
+
+<section id="section-informations-co" class="section-informations">
+    <div id="circle-co">
+        <img width="50" height="50" alt="" src="~/Content/images/informations/car.png" />
+    </div>
+    <div id="date-hours">
+        <span id="hours-start">Aujourd'hui à 10h00</span>
+        <img class="deco-arrow" src="~/Content/images/results-list/arrow.png" alt="" width="6" height="9" />
+        <span id="hours-end">12h00</span>
+    </div>
+    <div id="km-co">
+        @Model.DurationStr - @(Model.GetKm(SessionHelper.LastSearchResult.Request.LocationStartAddress, SessionHelper.LastSearchResult.Request.LocationEndAddress))km
+    </div>
+    <div id="price-co" class="color1">
+        Prix : @(Model.DefaultCost)€/place
+    </div>
+    <div id="place-co">
+        @Model.NbFreePlace places restantes
+    </div>
+    <div id="itinerary-title" class="color1">
+        Itinéraire
+    </div>
+    <section id="cd-timeline" class="cd-container">
+        @foreach (var item in Model.Steps.OrderBy(i => i.Type))
+        {
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img @(item.Type == TypeStep.Start ? "cd-start" : item.Type == TypeStep.End ? "cd-end" : "cd-stop")">
+                    <img src="~/Content/images/informations/cd-icon-marker.svg" alt="@(item.Type == TypeStep.Start ? "start" : item.Type == TypeStep.End ? "end" : "stop")">
+                </div> <!-- cd-timeline-img -->
+                <div class="cd-timeline-content">
+                    <h2>@item.GetCity()</h2>
+                    @if (item.Type == TypeStep.Start)
+                    {
+                        <p>Départ</p>
+                    }
+                    else if (item.Type == TypeStep.End)
+                    {
+                        <p>Arrivée</p>
+                    }
+                    <p class="cd-date">10h05</p>
+                </div> <!-- cd-timeline-content -->
+            </div> <!-- cd-timeline-block -->
+        }
+    </section> <!-- cd-timeline -->
+    <section id="comment-driver">
+        <h2 class="color1">Commentaire du conducteur</h2>
+        <p>"@(!string.IsNullOrEmpty(Model.Comment) ? Model.Comment : "Un agréable voyage en ma companie" )"</p>
+    </section>
+    <section class="block-driver">
+        <div id="sub-block-driver">
+            <div class="photo-driver">
+                @if (Model.Driver.Avatar == null)
+                {
+                    <img src="~/Content/images/app/no-photo-driver.png" alt="Photo conducteur" width="60" height="60" />
+                }
+                else
+                {
+                    <img src="@Url.Action("Avatar", "Account", new { idUser = Model.Driver.Id })" alt="Photo conducteur" width="60" height="60" />
+                }
+            </div>
+            <div class="infos-driver-1">
+                <div>
+                    <span class="infos-driver-name">@Model.Driver.Name @Model.Driver.FirstName</span>
+                    <span class="infos-driver-old">@((int)((DateTime.Now - Model.Driver.DateBirthday).TotalDays / 365)) ans</span>
+                </div>
+                <div class="block-note">
+                    <span class="note">@Model.Driver.Note</span> -
+                    <span class="notice">@Model.Driver.Avis.Count() avis</span> 
+                </div>
+            </div>
+            <div class="infos-driver-2">
+                <span class="skill">Ambassadeur</span>
+            </div>
+            <div class="clear"></div>
+            </div>
+        <div id="travel">Voyages effectués : @Model.Driver.NbTripDone</div>
+        <div id="inscription">Date d'inscription : @Model.Driver.DateCreation.ToString("dd/MM/yyyy")</div>
+        <div id="last-connect">Dernière connexion : @Model.Driver.LastConnection.ToString("dd/MM/yyyy")</div>
+        <div class="clear"></div>
+    </section>
+    <div class="clear"></div>
+    <div id="validate-reservation">
+        <a href="@Url.Action("Reservation", "Find", new { idTrip = Model.Id })" id="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+            Réserver
+        </a>
+    </div>
+</section>

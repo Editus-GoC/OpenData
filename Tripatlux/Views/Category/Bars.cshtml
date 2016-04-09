@@ -1,0 +1,31 @@
+﻿@using Tripatlux.ServiceHackathon
+@model FicheResultatMobile
+
+@section CSSHeadSection {
+    <link href="~/Content/css/app.css" rel="stylesheet" />
+    <link href="~/Content/css/category.css" rel="stylesheet" />
+}
+
+<ul id="category">
+    @foreach (var item in Model.Items)
+    {
+        <li>
+            <a href="@Url.Action("Index","Home", new { addressTo = item.Adresse + " " +item.CodePostal + " " + item.LocaliteFr + " " + "Luxembourg" })">
+                @if (item.Logo != null)
+                {
+                    <div class="logo-container">
+                        <img src="http://webfiles.luxweb.com/logos/@(item.Logo.Path)" />
+                    </div>
+                }
+                <div class="right-container">
+                    <div class="name-container">@item.Nom</div>
+                    <div class="address-container">@item.Adresse @item.LocaliteFr</div>
+                </div>
+            </a>
+        </li>
+    }
+</ul>
+
+@section JSBottomSection {
+    <script src="~/Content/js/categorys.js"></script>
+}

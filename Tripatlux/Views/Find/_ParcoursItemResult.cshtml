@@ -1,0 +1,38 @@
+﻿@using Tripatlux.Models.DataBus
+@model Way
+
+<li class="result-bus">
+    <a href="@Url.Action("InfoBus", "Find", new { id = Model.Id })">
+        <span class="color"></span>
+        <div class="result-block-route">
+            <div class="result-block-1">
+                <div class="hours-block">
+                    <span class="hours-start">@(Model.StepStart.Hours.Hours < 10 ? "0" : "")@(Model.StepStart.Hours.Hours)h@(Model.StepStart.Hours.Minutes < 10 ? "0" : "")@(Model.StepStart.Hours.Minutes)</span>
+                    <img class="deco-arrow" src="~/Content/images/results-list/arrow.png" alt="" width="6" height="9" />
+                    <span class="hours-end">@(Model.StepEnd.Hours.Hours < 10 ? "0" : "")@(Model.StepEnd.Hours.Hours)h@(Model.StepEnd.Hours.Minutes < 10 ? "0" : "")@(Model.StepEnd.Hours.Minutes)</span>
+                </div>
+                <div class="route-block">
+                    <span class="route-start">@Model.StepStart.Step.BusStop.Name</span>
+                    <img class="deco-arrow" src="~/Content/images/results-list/arrow.png" alt="" width="6" height="9" />
+                    <span class="route-end">@Model.StepEnd.Step.BusStop.Name</span>
+                </div>
+                <div class="nb-square">@(Model.WaySteps.Count - 1) arrêts</div>
+            </div>
+            <div class="result-block-2">
+                <span class="price"></span>
+                <span class="time">@Model.Duration</span>
+                <span class="km"></span>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="result-block-driver">
+            <div class="photo-driver">
+                <img src="~/Content/images/app/bus.png" alt="Photo Bus" width="30" height="30" />
+            </div>
+            <div class="infos-driver-1">
+                <div class="infos-driver-num-bus">Bus N° : @Model.StepStart.Step.Parcours.Line.Number</div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </a>
+</li>

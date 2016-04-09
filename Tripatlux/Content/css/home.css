@@ -1,0 +1,72 @@
+﻿.search-type {
+    display: table;
+    position: relative;
+    width: 100%;
+    padding: 0 20px;
+}
+.search-type.find {
+    position: relative;
+    height: 60%;
+    padding-top: 20px;
+    background: url('/Content/images/home/find.png') no-repeat bottom center;
+    background-size: 100% auto;
+}
+.search-type.find .mdl-button {
+    height: auto;
+    padding: 5px 40px;
+    font-size: 17px;
+    letter-spacing: .5px;
+}
+.search-type > span { color: #fff; }
+.search-type.find > span {
+    display: block;
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 24px;
+    text-align: center;
+}
+.search-type.event {
+    height: calc(25% + 70px);
+    padding-bottom: 20px;
+    margin-top: -70px;
+    background: url('/Content/images/home/event.png') no-repeat top center;
+    background-size: 100% auto;
+}
+.search-type.propose {
+    height: calc(15% + 70px);
+    padding-top: 15px;
+    margin-top: -70px;
+    background: url('/Content/images/home/propose.png') no-repeat top center;
+    background-size: 100% auto;
+}
+.search-type > span {
+  display: table-cell; 
+  vertical-align: middle; 
+  text-align: center; 
+}
+.search-type.event > span,
+.search-type.propose > span {
+    font-size: 19px;
+    font-weight: bold;
+    line-height: 24px;
+}
+.search-type.event > span em {
+    display: block;
+    margin-top: 5px;
+    color: #f00224;
+    font-size: 17px;
+    font-weight: bold;
+}
+.section-link { text-decoration: none; }
+
+/* MDL */
+.mdl-textfield {
+    width: 100%;
+}
+.mdl-textfield__label {
+    color: #fff;
+}
+.mdl-textfield__input {
+    color: #fff;
+    border-bottom-color: #fff;
+}

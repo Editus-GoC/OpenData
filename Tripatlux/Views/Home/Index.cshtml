@@ -1,0 +1,56 @@
+﻿@section CSSHeadSection {
+    <link href="~/Content/css/app.css" rel="stylesheet" />
+    <link href="~/Content/css/picker.css" rel="stylesheet" />
+    <link href="~/Content/css/picker.css.date.css" rel="stylesheet" />
+    <link href="~/Content/css/home.css" rel="stylesheet" />
+}
+
+<section class="search-type find">
+    <span>Je cherche un trajet</span>
+    <form action="@Url.Action("Result", "Find")" method="get">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="from" name="StartAddress">
+            <label class="mdl-textfield__label" for="from">de</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="to" name="EndAddress" value="@(ViewData["AddressTo"] == null ? "" : ViewData["AddressTo"].ToString())">
+            <label class="mdl-textfield__label" for="to">à</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="when" name="Date">
+            <label class="mdl-textfield__label" for="when">Quand ?</label>
+        </div>
+        <div class="align-center">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Chercher
+            </button>
+        </div>
+    </form>
+</section>
+
+<a href="@Url.Action("Index", "Category")" class="section-link">
+    <section class="search-type event">
+        <span>
+            Vous allez à un événement ?<br />
+            Simplifiez votre trajet<br />
+            <em>
+                Concert, cinéma, boite de nuit, ...
+            </em>
+        </span>
+    </section>
+</a>
+
+<a href="@Url.Action("Index", "Created")" class="section-link">
+    <section class="search-type propose">
+        <span>
+            Je propose un trajet
+        </span>
+    </section>
+</a>
+
+@section JSBottomSection {
+    <script src="~/Content/js/picker.js"></script>
+    <script src="~/Content/js/picker.date.js"></script>
+    <script src="~/Content/js/picker.fr_FR.js"></script>
+    <script src="~/Content/js/home.js"></script>
+}

@@ -1,0 +1,77 @@
+﻿@using Tripatlux.Models.ViewModels
+@model ReservationViewModel
+
+@section CSSHeadSection {
+    <link href="~/Content/css/app.css" rel="stylesheet" />
+    <link href="~/Content/css/reservation.css" rel="stylesheet" />
+}
+
+<span class="page-title">Réservation</span>
+
+<div class="subcontent align-center">
+    <span class="page-subtitle">Départ et arrivée</span>
+    Départ le <strong>@Model.Trip.DateStart.ToString("dddd dd MMMM")</strong> à <strong>@Model.Trip.DateStart.ToString("HH:mm")</strong><br />
+    Arrivé le <strong>@Model.Trip.DateEnd.ToString("dddd dd MMMM")</strong> à <strong>@Model.Trip.DateEnd.ToString("HH:mm")</strong>
+</div>
+
+<div class="subcontent align-center">
+    <span class="page-subtitle">Profil du chauffeur</span>
+    <div id="driver-picture-container">
+        @if (Model.Trip.Driver.Avatar == null)
+        {
+            <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ3rlNCMaH4ZbnJqlijkkZaCESA3OAvXoKfJWQZ85qu1HPMv_qlhkteqA" />
+        }
+        else
+        {
+            <img src="@Url.Action("Avatar", "Account", new { idUser = Model.Trip.Driver.Id })" />
+        }        
+    </div>
+    <div id="driver-name">
+        @Model.Trip.Driver.FirstName @Model.Trip.Driver.Name
+    </div>
+    <div id="driver-last-connection">
+        Dernière connexion : Le @Model.Trip.Driver.LastConnection.ToString("dd MMMM yyyy") à @Model.Trip.Driver.LastConnection.ToString("HH")h@(Model.Trip.Driver.LastConnection.ToString("mm"))
+    </div>
+    <div id="driver-trips">
+        Nombre de voyages : <strong>@Model.Trip.Driver.NbTripDone</strong>
+    </div>
+    <div id="driver-quotation">
+        @for (int i = 0; i < Model.Trip.Driver.Note; i++)
+        {
+            <i class="material-icons driver-quotation-star">star</i>
+        }
+    </div>
+</div>
+
+<form method="get" action="@Url.Action("Paiement", "Find")">
+
+    <div class="subcontent align-center">
+        <span class="page-subtitle">Prix</span>
+        Prix : @Model.Trip.DefaultCost.ToString("0.00 €")
+
+        <div class="subcontent-sep"></div>
+
+        <span class="page-subtitle">Nombre de places</span>
+        <div data-maxplace="@(Model.Trip.NbPassagers -  Model.Trip.NbFreePlace)">
+            Nb place :
+            <select id="places" name="nbPlace">
+                @for (int i = 1; i <= Model.Trip.NbFreePlace; i++)
+                {
+                    <option @(i == 1 ? "selected=selected" : "") value="@i">@i</option>
+                }
+            </select>
+        </div>
+
+        <input type="hidden" name="idTrip" value="@Model.Trip.Id" />
+
+    </div>
+
+    <div class="align-center">
+        <input type="submit" id="submit-route" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent large-button" value="Réserver" />
+    </div>
+
+</form>
+
+@section JSBottomSection {
+    <script src="~/Content/js/reservation.js"></script>
+}

@@ -1,0 +1,33 @@
+﻿@section CSSHeadSection {
+    <link href="~/Content/css/app.css" rel="stylesheet" />
+    <link href="~/Content/css/googlemap.css" rel="stylesheet" />
+}
+
+<div class="mdl-textfield mdl-js-textfield">
+    <input type="text" class="mdl-textfield__input" id="start" placeholder="Enter your address" value="Dudelange, Luxembourg" />
+    <label class="mdl-textfield__label" for="start">De :</label>
+</div>
+
+<ol id="intermediate-steps" data-step-label="Etape"></ol>
+
+<button id="add-step" class="mdl-button mdl-js-button mdl-button--raised float-right">
+    Ajouter une étape
+</button>
+<div class="clear"></div>
+
+<div class="mdl-textfield mdl-js-textfield">
+    <input type="text" class="mdl-textfield__input" id="end" placeholder="Enter your address" value="Capelen, Luxembourg" />
+    <label class="mdl-textfield__label" for="end">De :</label>
+</div>
+<div class="clear"></div>
+
+<div class="align-center">
+    <button id="submit-route" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+        Valider le trajet
+    </button>
+</div>
+
+@section JSBottomSection {
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCta3Rfy6fLAfzzb8OrqQKNfISBSefH8Rk&signed_in=true&callback=initMap" async defer></script>
+    <script src="~/Content/js/googlemap.js"></script>
+}

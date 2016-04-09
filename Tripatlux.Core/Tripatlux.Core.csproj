@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7A658BCA-14E9-428B-84B2-9237ABEA30DF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tripatlux.Core</RootNamespace>
+    <AssemblyName>Tripatlux.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bll\Operation\Nomenclature\NomenclatureTypeBadge.cs" />
+    <Compile Include="Bll\Operation\Recherche\RechercheOperation.cs" />
+    <Compile Include="Bll\Operation\Trip\BaseOperation.cs" />
+    <Compile Include="Bll\Operation\TransportPublic\BaseOperationTransportPublic.cs" />
+    <Compile Include="Bll\Operation\Nomenclature\NomenclatureCaracteristiqueVoyageOperation.cs" />
+    <Compile Include="Bll\Operation\Nomenclature\NomenclatureTypeBagageOperation.cs" />
+    <Compile Include="Bll\Operation\Nomenclature\NomenclatureTypeEtapeOperation.cs" />
+    <Compile Include="Bll\Operation\Nomenclature\NomenclatureTypeVehiculeOperation.cs" />
+    <Compile Include="Bll\Operation\TransportPublic\TransportPublicArretOperation.cs" />
+    <Compile Include="Bll\Operation\TransportPublic\TransportPublicLigneOperation.cs" />
+    <Compile Include="Bll\Operation\TransportPublic\TransportPublicParcoursEtapeOperation.cs" />
+    <Compile Include="Bll\Operation\TransportPublic\TransportPublicParcoursOperation.cs" />
+    <Compile Include="Bll\Operation\TransportPublic\TransportPublicTourneeEtapeOperation.cs" />
+    <Compile Include="Bll\Operation\TransportPublic\TransportPublicTourneeOperation.cs" />
+    <Compile Include="Bll\Operation\Trip\UtilisateurBadgeOperation.cs" />
+    <Compile Include="Bll\Operation\Trip\UtilisateurFavoriOperation.cs" />
+    <Compile Include="Bll\Operation\Trip\UtilisateurOperation.cs" />
+    <Compile Include="Bll\Operation\Trip\VehiculeOperation.cs" />
+    <Compile Include="Bll\Operation\Trip\VoyageCaracteristiqueOperation.cs" />
+    <Compile Include="Bll\Operation\Trip\EtapeOperation.cs" />
+    <Compile Include="Bll\Operation\Trip\VoyageGuidageOperation.cs" />
+    <Compile Include="Bll\Operation\Trip\VoyageOperation.cs" />
+    <Compile Include="Bll\Operation\Trip\VoyagePassagerOperation.cs" />
+    <Compile Include="Bll\RechercheManager.cs" />
+    <Compile Include="Bll\TransportPublicManager.cs" />
+    <Compile Include="Bll\TripAtLuxManager.cs" />
+    <Compile Include="Models.TransportPublic\ARRET.cs" />
+    <Compile Include="Models.TransportPublic\BaseEntity.cs" />
+    <Compile Include="Models.TransportPublic\LIGNE.cs" />
+    <Compile Include="Models.TransportPublic\Mapping\ARRETMap.cs" />
+    <Compile Include="Models.TransportPublic\Mapping\LIGNEMap.cs" />
+    <Compile Include="Models.TransportPublic\Mapping\PARCOURSMap.cs" />
+    <Compile Include="Models.TransportPublic\Mapping\PARCOURS_ETAPEMap.cs" />
+    <Compile Include="Models.TransportPublic\Mapping\TOURNEEMap.cs" />
+    <Compile Include="Models.TransportPublic\Mapping\TOURNEE_ETAPEMap.cs" />
+    <Compile Include="Models.TransportPublic\PARCOURS.cs" />
+    <Compile Include="Models.TransportPublic\PARCOURS_ETAPE.cs" />
+    <Compile Include="Models.TransportPublic\Sp_GET_ARRET_PLUS_PROCHEResult.cs" />
+    <Compile Include="Models.TransportPublic\TOURNEE.cs" />
+    <Compile Include="Models.TransportPublic\TOURNEE_ETAPE.cs" />
+    <Compile Include="Models\AspNetRole.cs" />
+    <Compile Include="Models\AspNetUser.cs" />
+    <Compile Include="Models\AspNetUserClaim.cs" />
+    <Compile Include="Models\AspNetUserLogin.cs" />
+    <Compile Include="Models\BaseEntity.cs" />
+    <Compile Include="Models\CARACTERISTIQUE_VOYAGE.cs" />
+    <Compile Include="Models\Mapping\AspNetRoleMap.cs" />
+    <Compile Include="Models\Mapping\AspNetUserClaimMap.cs" />
+    <Compile Include="Models\Mapping\AspNetUserLoginMap.cs" />
+    <Compile Include="Models\Mapping\AspNetUserMap.cs" />
+    <Compile Include="Models\Mapping\CARACTERISTIQUE_VOYAGEMap.cs" />
+    <Compile Include="Models\Mapping\sysdiagramMap.cs" />
+    <Compile Include="Models\Mapping\TYPE_BADGEMap.cs" />
+    <Compile Include="Models\Mapping\TYPE_BAGAGEMap.cs" />
+    <Compile Include="Models\Mapping\TYPE_ETAPEMap.cs" />
+    <Compile Include="Models\Mapping\TYPE_VEHICULEMap.cs" />
+    <Compile Include="Models\Mapping\UTILISATEURMap.cs" />
+    <Compile Include="Models\Mapping\UTILISATEUR_BADGEMap.cs" />
+    <Compile Include="Models\Mapping\UTILISATEUR_FAVORIMap.cs" />
+    <Compile Include="Models\Mapping\VEHICULEMap.cs" />
+    <Compile Include="Models\Mapping\VOYAGEMap.cs" />
+    <Compile Include="Models\Mapping\VOYAGE_CARACTERISTIQUEMap.cs" />
+    <Compile Include="Models\Mapping\VOYAGE_ETAPEMap.cs" />
+    <Compile Include="Models\Mapping\VOYAGE_GUIDAGEMap.cs" />
+    <Compile Include="Models\Mapping\VOYAGE_PASSAGERMap.cs" />
+    <Compile Include="Models\Sp_GET_VOYAGE_ETAPE_PLUS_PROCHEResult.cs" />
+    <Compile Include="Models\Sp_GET_VOYAGE_PLUS_PROCHEResult.cs" />
+    <Compile Include="Models\sysdiagram.cs" />
+    <Compile Include="Models\TYPE_BADGE.cs" />
+    <Compile Include="Models\UTILISATEUR_BADGE.cs" />
+    <Compile Include="Models\VOYAGE_GUIDAGE.cs" />
+    <Compile Include="Tool\ListExtension.cs" />
+    <Compile Include="Tool\TimeSpanExtension.cs" />
+    <Compile Include="TRANSPORT_PUBLICContext.cs" />
+    <Compile Include="TRIP_AT_LUXContext.cs" />
+    <Compile Include="Models\TYPE_BAGAGE.cs" />
+    <Compile Include="Models\TYPE_ETAPE.cs" />
+    <Compile Include="Models\TYPE_VEHICULE.cs" />
+    <Compile Include="Models\UTILISATEUR.cs" />
+    <Compile Include="Models\UTILISATEUR_FAVORI.cs" />
+    <Compile Include="Models\VEHICULE.cs" />
+    <Compile Include="Models\VOYAGE.cs" />
+    <Compile Include="Models\VOYAGE_CARACTERISTIQUE.cs" />
+    <Compile Include="Models\VOYAGE_ETAPE.cs" />
+    <Compile Include="Models\VOYAGE_PASSAGER.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FichiersAnnexes\json_directions_gmap.txt" />
+    <Content Include="FichiersAnnexes\SELECT ALL TRANSPORT PUBLIC.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

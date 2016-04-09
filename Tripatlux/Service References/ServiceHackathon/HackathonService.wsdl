@@ -1,0 +1,1636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="HackathonService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="HackathonEndPoint_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Luxweb.Cinema.Business" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Luxweb.Agenda.Business" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Mobile.Business" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Mobile.Business.HabiterMobile" />
+      <xs:element name="GetFilms">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetFilmsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Luxweb.Cinema.Business" minOccurs="0" name="GetFilmsResult" nillable="true" type="q1:ArrayOfFilmFicheDetail" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetFilm">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="id" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetFilmResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Luxweb.Cinema.Business" minOccurs="0" name="GetFilmResult" nillable="true" type="q2:FilmFicheDetail" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetSalle">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="id" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetSalleResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Luxweb.Cinema.Business" minOccurs="0" name="GetSalleResult" nillable="true" type="q3:Salle" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetEvenements">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetEvenementsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Luxweb.Agenda.Business" minOccurs="0" name="GetEvenementsResult" nillable="true" type="q4:ArrayOfEvent" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetNightClubs">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetNightClubsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Mobile.Business" minOccurs="0" name="GetNightClubsResult" nillable="true" type="q5:FicheResultatMobile" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetBars">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetBarsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Mobile.Business" minOccurs="0" name="GetBarsResult" nillable="true" type="q6:FicheResultatMobile" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetRestaurants">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetRestaurantsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Mobile.Business" minOccurs="0" name="GetRestaurantsResult" nillable="true" type="q7:FicheResultatMobile" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetVilles">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetVillesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Mobile.Business.HabiterMobile" minOccurs="0" name="GetVillesResult" nillable="true" type="q8:ArrayOfItemLocation" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTiers">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="idCli" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTiersResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Mobile.Business" minOccurs="0" name="GetTiersResult" nillable="true" type="q9:FicheInfoMobile" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTiersByAddress">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTiersByAddressResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Mobile.Business" minOccurs="0" name="GetTiersByAddressResult" nillable="true" type="q10:FicheResultatMobile" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Luxweb.Cinema.Business" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Luxweb.Cinema.Business" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="ArrayOfFilmFicheDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="FilmFicheDetail" nillable="true" type="tns:FilmFicheDetail" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfFilmFicheDetail" nillable="true" type="tns:ArrayOfFilmFicheDetail" />
+      <xs:complexType name="FilmFicheDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Annee_Sortie" type="xs:int" />
+          <xs:element minOccurs="0" name="Auteur" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Casting" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Date_Premiere_Seance" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Directory" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Distributeur" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Duree" type="xs:int" />
+          <xs:element minOccurs="0" name="Format2D3D" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id_Film" type="xs:int" />
+          <xs:element minOccurs="0" name="Image_Url" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Libelle_Genre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Liste_Commentaires" nillable="true" type="tns:ArrayOfCommentaire" />
+          <xs:element minOccurs="0" name="Liste_Salles" nillable="true" type="tns:ArrayOfSalle" />
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Liste_Seances" nillable="true" type="q1:ArrayOfdateTime" />
+          <xs:element minOccurs="0" name="Nombre_Votes" type="xs:int" />
+          <xs:element minOccurs="0" name="Note_Moyenne" type="xs:int" />
+          <xs:element minOccurs="0" name="Pays" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pers_Adm" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Producteur" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Realisateur" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Synopsis" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Titre_Film" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Trailer" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="FilmFicheDetail" nillable="true" type="tns:FilmFicheDetail" />
+      <xs:complexType name="ArrayOfCommentaire">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Commentaire" nillable="true" type="tns:Commentaire" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfCommentaire" nillable="true" type="tns:ArrayOfCommentaire" />
+      <xs:complexType name="Commentaire">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Date_Commentaire" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Lieu_Habitation" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Note" type="xs:int" />
+          <xs:element minOccurs="0" name="Texte_Commentaire" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Commentaire" nillable="true" type="tns:Commentaire" />
+      <xs:complexType name="ArrayOfSalle">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Salle" nillable="true" type="tns:Salle" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfSalle" nillable="true" type="tns:ArrayOfSalle" />
+      <xs:complexType name="Salle">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Adresse" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdVille" type="xs:int" />
+          <xs:element minOccurs="0" name="Id_Salle" type="xs:int" />
+          <xs:element minOccurs="0" name="Id_Tiers" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="Latitude" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Localite" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Localite2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Longitude" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Nom_Salle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Tel" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Salle" nillable="true" type="tns:Salle" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfdateTime">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="dateTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfdateTime" nillable="true" type="tns:ArrayOfdateTime" />
+      <xs:complexType name="ArrayOfstring">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring" />
+    </xs:schema>
+    <xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Luxweb.Agenda.Business" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Luxweb.Agenda.Business" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xs:complexType name="ArrayOfEvent">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Event" nillable="true" type="tns:Event" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfEvent" nillable="true" type="tns:ArrayOfEvent" />
+      <xs:complexType name="Event">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EndDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="EndHour" nillable="true" type="ser:duration" />
+          <xs:element minOccurs="0" name="Genre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdEvent" type="xs:int" />
+          <xs:element minOccurs="0" name="ImageUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Salle" nillable="true" type="tns:SalleEvent" />
+          <xs:element minOccurs="0" name="StartDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="StartHour" nillable="true" type="ser:duration" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Event" nillable="true" type="tns:Event" />
+      <xs:complexType name="SalleEvent">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CP" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IdCity" type="xs:int" />
+          <xs:element minOccurs="0" name="Id_Salle" type="xs:int" />
+          <xs:element minOccurs="0" name="Latitude" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Longitude" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Nom_Salle" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StreetName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StreetNum" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SalleEvent" nillable="true" type="tns:SalleEvent" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Mobile.Business" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Mobile.Business" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Client.Business" />
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/MobileServices.Business.Editus.Models" />
+      <xs:complexType name="FicheResultatMobile">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Items" nillable="true" type="tns:ArrayOfFicheResultatMobileItem" />
+          <xs:element minOccurs="0" name="NbTotalItems" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="FicheResultatMobile" nillable="true" type="tns:FicheResultatMobile" />
+      <xs:complexType name="ArrayOfFicheResultatMobileItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="FicheResultatMobileItem" nillable="true" type="tns:FicheResultatMobileItem" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfFicheResultatMobileItem" nillable="true" type="tns:ArrayOfFicheResultatMobileItem" />
+      <xs:complexType name="FicheResultatMobileItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Adresse" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="CodePays" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="CodePostal" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Distance" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="EtatEditus" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="FacilitesAcces" nillable="true" type="tns:ArrayOfInfoCatMobile">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="FormeJuridique" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="HasBookMe" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HeuresOuvertures" nillable="true" type="tns:ArrayOfInfoCatMobile">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="InfoCoupons" nillable="true" type="tns:InfoCoupons" />
+          <xs:element minOccurs="0" name="IsTopCadre" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ItemId" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LocaliteFr" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LocaliteLux" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Client.Business" minOccurs="0" name="Logo" nillable="true" type="q1:Img">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Ouvert" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ProduitServices" nillable="true" type="tns:ArrayOfProduitServiceMobile">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Rubrique" nillable="true" type="tns:RubriqueMobile">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SiteInternet" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SiteInternetProId" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SiteMobileLib" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SiteMobileProId" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SiteMobileUrl" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="StickerId" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TelToClick" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TelToDisplay" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TiersId" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TypeOuverture" nillable="true" type="tns:ArrayOfInfoCatMobile">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Wgs84X" type="xs:float">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Wgs84Y" type="xs:float">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="FicheResultatMobileItem" nillable="true" type="tns:FicheResultatMobileItem" />
+      <xs:complexType name="ArrayOfInfoCatMobile">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="InfoCatMobile" nillable="true" type="tns:InfoCatMobile" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfInfoCatMobile" nillable="true" type="tns:ArrayOfInfoCatMobile" />
+      <xs:complexType name="InfoCatMobile">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CatId" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ConfidentielInfoCat" type="xs:boolean" />
+          <xs:element minOccurs="0" name="DateDebut" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DateDebutStr" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DateFin" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DateFinStr" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="EstCoche" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HeureDebut" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="HeureDebutStr" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="HeureFin" nillable="true" type="xs:dateTime">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="HeureFinStr" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LibCat" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LibInfoCat" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="NombreInfo" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="NombreInfoFin" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TranchePrixDeb" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TranchePrixFin" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TriInfoCat" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="InfoCatMobile" nillable="true" type="tns:InfoCatMobile" />
+      <xs:complexType name="InfoCoupons">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IdFirstCoupon" type="xs:int" />
+          <xs:element minOccurs="0" name="NbTotalCoupons" type="xs:int" />
+          <xs:element minOccurs="0" name="TitreFirstCoupon" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="InfoCoupons" nillable="true" type="tns:InfoCoupons" />
+      <xs:complexType name="ArrayOfProduitServiceMobile">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ProduitServiceMobile" nillable="true" type="tns:ProduitServiceMobile" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfProduitServiceMobile" nillable="true" type="tns:ArrayOfProduitServiceMobile" />
+      <xs:complexType name="ProduitServiceMobile">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IdProSer" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LibProSer" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ProduitServiceMobile" nillable="true" type="tns:ProduitServiceMobile" />
+      <xs:complexType name="RubriqueMobile">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="IdRubrique" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LibRubrique" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="NbProSer" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="RubriqueMobile" nillable="true" type="tns:RubriqueMobile" />
+      <xs:complexType name="ArrayOfDecideurMobile">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="DecideurMobile" nillable="true" type="tns:DecideurMobile" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfDecideurMobile" nillable="true" type="tns:ArrayOfDecideurMobile" />
+      <xs:complexType name="DecideurMobile">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CiviliteDecideur" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ConfidentielDecideur" type="xs:boolean" />
+          <xs:element minOccurs="0" name="FaxToDisplayDecideur" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="FonctionPrincipaleLib" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="FonctionSecondaireLib" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="GsmToClickDecideur" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="GsmToDisplayDecideur" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="MailDecideur" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="NomDecideur" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PrenomDecideur" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TelToClickDecideur" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TelToDisplayDecideur" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TitreDecideur" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="DecideurMobile" nillable="true" type="tns:DecideurMobile" />
+      <xs:complexType name="FicheInfoMobile">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ActivitePrincipale" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Adresse" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Boosters" nillable="true" type="q2:ArrayOfstring">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="CapitalSocial" type="xs:long">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="CapitalSocialConfidentiel" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ChiffreAffaire" type="xs:long">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ChiffreAffaireConfidentiel" type="xs:boolean" />
+          <xs:element minOccurs="0" name="CodePays" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="CodePostal" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="CodeRegistreCommerce" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="CodeTVA" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/MobileServices.Business.Editus.Models" minOccurs="0" name="Coupons" nillable="true" type="q3:ArrayOfCoupon" />
+          <xs:element minOccurs="0" name="CreationDate" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Decideurs" nillable="true" type="tns:ArrayOfDecideurMobile">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Effectif" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="EffectifConfidentiel" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="EmailProId" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="EtatEditus" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Facilites" nillable="true" type="tns:ArrayOfInfoCatMobile">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="FaxToDisplay" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="FermeturesAnnuelles" nillable="true" type="tns:ArrayOfInfoCatMobile">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="FormeJuridique" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="GsmToClick" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="GsmToDisplay" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="HasBookMe" type="xs:boolean" />
+          <xs:element minOccurs="0" name="HeuresOuvertures" nillable="true" type="tns:ArrayOfInfoCatMobile">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IdTiers" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="IdUnique" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LanguesParlees" nillable="true" type="tns:ArrayOfInfoCatMobile">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LocaliteFr" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LocaliteLux" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Logo" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Marques" nillable="true" type="tns:ArrayOfMarqueMobile">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="MethodesPaiements" nillable="true" type="tns:ArrayOfInfoCatMobile">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="MoyensAcces" nillable="true" type="tns:ArrayOfInfoCatMobile">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Nom" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="NumRegistreCommerce" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="NumRegistreCommerceConfidentiel" type="xs:boolean" />
+          <xs:element minOccurs="0" name="NumTVAIntracommunautaire" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="OuvertureSpeciales" nillable="true" type="tns:ArrayOfInfoCatMobile">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Photos" nillable="true" type="q4:ArrayOfstring">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Prenom" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PrixBudgets" nillable="true" type="tns:ArrayOfInfoCatMobile">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ProduitServices" nillable="true" type="tns:ArrayOfProduitServiceMobile">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Rubriques" nillable="true" type="tns:ArrayOfRubriqueMobile">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Services" nillable="true" type="tns:ArrayOfInfoCatMobile">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SiteInternet" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SiteInternetProId" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SiteMobileLib" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SiteMobileProId" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SiteMobileUrl" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TVAConfidentiel" type="xs:boolean" />
+          <xs:element minOccurs="0" name="TelToClick" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TelToDisplay" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TexteFicheInfo" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TypeOuverture" nillable="true" type="tns:ArrayOfInfoCatMobile">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="VideoUrl" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Wgs84X" type="xs:float">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Wgs84Y" type="xs:float">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="FicheInfoMobile" nillable="true" type="tns:FicheInfoMobile" />
+      <xs:complexType name="ArrayOfMarqueMobile">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="MarqueMobile" nillable="true" type="tns:MarqueMobile" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfMarqueMobile" nillable="true" type="tns:ArrayOfMarqueMobile" />
+      <xs:complexType name="MarqueMobile">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="EstConfidentiel" type="xs:boolean" />
+          <xs:element minOccurs="0" name="LibMarque" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="MarqueMobile" nillable="true" type="tns:MarqueMobile" />
+      <xs:complexType name="ArrayOfRubriqueMobile">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="RubriqueMobile" nillable="true" type="tns:RubriqueMobile" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfRubriqueMobile" nillable="true" type="tns:ArrayOfRubriqueMobile" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Client.Business" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Client.Business" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="Img">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CodeLang" type="xs:int" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="IdCli" type="xs:int" />
+          <xs:element minOccurs="0" name="IdPro" type="xs:int" />
+          <xs:element minOccurs="0" name="Path" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SiteCode" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Img" nillable="true" type="tns:Img" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Mobile.Business.HabiterMobile" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Mobile.Business.HabiterMobile" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/MobileServices.Business.Editus.Models" />
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Mobile.Business" />
+      <xs:complexType name="ArrayOfItemLocation">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemLocation" nillable="true" type="tns:ItemLocation" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfItemLocation" nillable="true" type="tns:ArrayOfItemLocation" />
+      <xs:complexType name="ItemLocation">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:Item">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="lat" nillable="true" type="xs:decimal" />
+              <xs:element minOccurs="0" name="lng" nillable="true" type="xs:decimal" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="ItemLocation" nillable="true" type="tns:ItemLocation" />
+      <xs:complexType name="Item">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:int" />
+          <xs:element minOccurs="0" name="idCountry" type="xs:int" />
+          <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="nameCountry" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="quartiers" nillable="true" type="tns:ArrayOfQuartier" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Item" nillable="true" type="tns:Item" />
+      <xs:complexType name="ArrayOfQuartier">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Quartier" nillable="true" type="tns:Quartier" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfQuartier" nillable="true" type="tns:ArrayOfQuartier" />
+      <xs:complexType name="Quartier">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:int" />
+          <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Quartier" nillable="true" type="tns:Quartier" />
+      <xs:complexType name="agency">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:ItemLocation">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="city" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="fax" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="gsm" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="hascoupons" type="xs:boolean" />
+              <xs:element minOccurs="0" name="idtier" type="xs:int" />
+              <xs:element minOccurs="0" name="logo" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="street" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="streetnum" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="tel" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="totalbuy" type="xs:int" />
+              <xs:element minOccurs="0" name="totalnew" type="xs:int" />
+              <xs:element minOccurs="0" name="totalrent" type="xs:int" />
+              <xs:element minOccurs="0" name="website" nillable="true" type="xs:string" />
+              <xs:element minOccurs="0" name="zipcode" nillable="true" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="agency" nillable="true" type="tns:agency" />
+      <xs:complexType name="FicheAgenceMobile">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:agency">
+            <xs:sequence>
+              <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MobileServices.Business.Editus.Models" minOccurs="0" name="Coupons" nillable="true" type="q1:ArrayOfCoupon" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="FicheAgenceMobile" nillable="true" type="tns:FicheAgenceMobile" />
+      <xs:complexType name="FicheAgenceIpad">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:FicheAgenceMobile">
+            <xs:sequence>
+              <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Mobile.Business" minOccurs="0" name="decideurs" nillable="true" type="q2:ArrayOfDecideurMobile">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+              <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Mobile.Business" minOccurs="0" name="fermeturesannuelles" nillable="true" type="q3:ArrayOfInfoCatMobile">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+              <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Mobile.Business" minOccurs="0" name="heuresouvertures" nillable="true" type="q4:ArrayOfInfoCatMobile">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+              <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Mobile.Business" minOccurs="0" name="ouverturesspeciales" nillable="true" type="q5:ArrayOfInfoCatMobile">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+              <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/CoreBusinessEditus.Services.Mobile.Business" minOccurs="0" name="typesouvertures" nillable="true" type="q6:ArrayOfInfoCatMobile">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="FicheAgenceIpad" nillable="true" type="tns:FicheAgenceIpad" />
+      <xs:complexType name="ItemAgency">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:Item">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="idtiers" type="xs:int" />
+              <xs:element minOccurs="0" name="lat" nillable="true" type="xs:decimal" />
+              <xs:element minOccurs="0" name="lng" nillable="true" type="xs:decimal" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="ItemAgency" nillable="true" type="tns:ItemAgency" />
+      <xs:complexType name="ItemCatalogue">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:Item">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="pertimmkey" nillable="true" type="xs:string" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="ItemCatalogue" nillable="true" type="tns:ItemCatalogue" />
+      <xs:complexType name="Catalogue">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:ItemCatalogue">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="criterias" nillable="true" type="tns:ArrayOfItemCatalogue" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="Catalogue" nillable="true" type="tns:Catalogue" />
+      <xs:complexType name="ArrayOfItemCatalogue">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ItemCatalogue" nillable="true" type="tns:ItemCatalogue" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfItemCatalogue" nillable="true" type="tns:ArrayOfItemCatalogue" />
+      <xs:complexType name="SquareMeterPrice">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:Item">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="distance" type="xs:decimal" />
+              <xs:element minOccurs="0" name="price" type="xs:decimal" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:element name="SquareMeterPrice" nillable="true" type="tns:SquareMeterPrice" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MobileServices.Business.Editus.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MobileServices.Business.Editus.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="ArrayOfCoupon">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Coupon" nillable="true" type="tns:Coupon" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfCoupon" nillable="true" type="tns:ArrayOfCoupon" />
+      <xs:complexType name="Coupon">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Conditions" nillable="true" type="q1:ArrayOfstring" />
+          <xs:element minOccurs="0" name="DateDebutPublication" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DateFinPublication" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Lien" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Titre" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Coupon" nillable="true" type="tns:Coupon" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IHackathonService_GetFilms_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilms" />
+  </wsdl:message>
+  <wsdl:message name="IHackathonService_GetFilms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHackathonService_GetFilm_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilm" />
+  </wsdl:message>
+  <wsdl:message name="IHackathonService_GetFilm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFilmResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHackathonService_GetSalle_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalle" />
+  </wsdl:message>
+  <wsdl:message name="IHackathonService_GetSalle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHackathonService_GetEvenements_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEvenements" />
+  </wsdl:message>
+  <wsdl:message name="IHackathonService_GetEvenements_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEvenementsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHackathonService_GetNightClubs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNightClubs" />
+  </wsdl:message>
+  <wsdl:message name="IHackathonService_GetNightClubs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNightClubsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHackathonService_GetBars_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBars" />
+  </wsdl:message>
+  <wsdl:message name="IHackathonService_GetBars_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBarsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHackathonService_GetRestaurants_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRestaurants" />
+  </wsdl:message>
+  <wsdl:message name="IHackathonService_GetRestaurants_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRestaurantsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHackathonService_GetVilles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVilles" />
+  </wsdl:message>
+  <wsdl:message name="IHackathonService_GetVilles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVillesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHackathonService_GetTiers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTiers" />
+  </wsdl:message>
+  <wsdl:message name="IHackathonService_GetTiers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTiersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHackathonService_GetTiersByAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTiersByAddress" />
+  </wsdl:message>
+  <wsdl:message name="IHackathonService_GetTiersByAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTiersByAddressResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IHackathonService">
+    <wsdl:operation name="GetFilms">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHackathonService/GetFilms" message="tns:IHackathonService_GetFilms_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHackathonService/GetFilmsResponse" message="tns:IHackathonService_GetFilms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFilm">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHackathonService/GetFilm" message="tns:IHackathonService_GetFilm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHackathonService/GetFilmResponse" message="tns:IHackathonService_GetFilm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHackathonService/GetSalle" message="tns:IHackathonService_GetSalle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHackathonService/GetSalleResponse" message="tns:IHackathonService_GetSalle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEvenements">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHackathonService/GetEvenements" message="tns:IHackathonService_GetEvenements_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHackathonService/GetEvenementsResponse" message="tns:IHackathonService_GetEvenements_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNightClubs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHackathonService/GetNightClubs" message="tns:IHackathonService_GetNightClubs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHackathonService/GetNightClubsResponse" message="tns:IHackathonService_GetNightClubs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBars">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHackathonService/GetBars" message="tns:IHackathonService_GetBars_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHackathonService/GetBarsResponse" message="tns:IHackathonService_GetBars_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurants">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHackathonService/GetRestaurants" message="tns:IHackathonService_GetRestaurants_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHackathonService/GetRestaurantsResponse" message="tns:IHackathonService_GetRestaurants_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVilles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHackathonService/GetVilles" message="tns:IHackathonService_GetVilles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHackathonService/GetVillesResponse" message="tns:IHackathonService_GetVilles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTiers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHackathonService/GetTiers" message="tns:IHackathonService_GetTiers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHackathonService/GetTiersResponse" message="tns:IHackathonService_GetTiers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTiersByAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHackathonService/GetTiersByAddress" message="tns:IHackathonService_GetTiersByAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHackathonService/GetTiersByAddressResponse" message="tns:IHackathonService_GetTiersByAddress_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HackathonEndPoint" type="tns:IHackathonService">
+    <wsp:PolicyReference URI="#HackathonEndPoint_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetFilms">
+      <soap12:operation soapAction="http://tempuri.org/IHackathonService/GetFilms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFilm">
+      <soap12:operation soapAction="http://tempuri.org/IHackathonService/GetFilm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalle">
+      <soap12:operation soapAction="http://tempuri.org/IHackathonService/GetSalle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEvenements">
+      <soap12:operation soapAction="http://tempuri.org/IHackathonService/GetEvenements" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNightClubs">
+      <soap12:operation soapAction="http://tempuri.org/IHackathonService/GetNightClubs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBars">
+      <soap12:operation soapAction="http://tempuri.org/IHackathonService/GetBars" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRestaurants">
+      <soap12:operation soapAction="http://tempuri.org/IHackathonService/GetRestaurants" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVilles">
+      <soap12:operation soapAction="http://tempuri.org/IHackathonService/GetVilles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTiers">
+      <soap12:operation soapAction="http://tempuri.org/IHackathonService/GetTiers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTiersByAddress">
+      <soap12:operation soapAction="http://tempuri.org/IHackathonService/GetTiersByAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HackathonService">
+    <wsdl:port name="HackathonEndPoint" binding="tns:HackathonEndPoint">
+      <soap12:address location="http://176.65.75.22/Services/HackathonService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://176.65.75.22/Services/HackathonService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

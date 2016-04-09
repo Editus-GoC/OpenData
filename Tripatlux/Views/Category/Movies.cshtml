@@ -1,0 +1,25 @@
+﻿@using Tripatlux.ServiceHackathon
+@model List<FilmFicheDetail>
+
+@section CSSHeadSection {
+    <link href="~/Content/css/app.css" rel="stylesheet" />
+    <link href="~/Content/css/category.css" rel="stylesheet" />
+}
+
+<div>
+    <ul>
+        @foreach (var eve in Model)
+        {
+            <li>
+                <a href="@(Url.Action("Movie", "Category", new { id = eve.Id_Film }))">
+                    <img src="@eve.Image_Url/poster.jpg" width="50" />
+                    <span>@eve.Titre_Film</span>
+                </a>
+            </li>
+        }
+    </ul>
+</div>
+
+@section JSBottomSection {
+    <script src="~/Content/js/categorys.js"></script>
+}

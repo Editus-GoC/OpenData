@@ -1,0 +1,22 @@
+﻿@using Tripatlux.Models.DataTrip
+@model Trip
+
+@section CSSHeadSection {
+    <link href="~/Content/css/app.css" rel="stylesheet" />
+    <link href="~/Content/css/paiement.css" rel="stylesheet" />
+}
+
+<section id="section-paiement">
+    <span class="page-title">Création d'un trajet</span>
+    <div class="subcontent">
+            <h2>Félicitation</h2>
+            <p id="description-message">
+                Votre trajet à bien été enregistré. <br /> 
+            </p>
+        <div id="return-home" class="align-center">
+            <a href="@Url.Action("Index", "Home")" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                Revenir à la page d'accueil
+            </a>
+        </div>
+    </div>
+</section>

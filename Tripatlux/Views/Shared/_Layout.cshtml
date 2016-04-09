@@ -1,0 +1,68 @@
+﻿@using Microsoft.AspNet.Identity
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="~/Content/css/material.min.css" />
+    <link rel="stylesheet" href="~/Content/css/mdl-colors.css" />
+    <link rel="stylesheet" href="~/Content/css/dialog-polyfill.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons" />
+
+    <script src="~/Content/js/material.min.js"></script>
+
+    @RenderSection("CSSHeadSection", required: false)
+
+    @RenderSection("JSHeadSection", required: false)
+
+</head>
+<body>
+
+    @Html.Partial("_TopBar")
+
+    <section id="app-content">
+        @*<h1>TripatLux</h1>
+        <ul>
+            <li>
+                <a class="navbar-brand" href="@Url.Action("Index", "GoogleMap")">Google Maps</a>
+            </li>
+            <li>
+                <a class="navbar-brand" href="#">Safari push</a>
+            </li>
+        </ul>*@
+        @*@if (Request.IsAuthenticated)
+        {
+            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+            {
+                @Html.AntiForgeryToken()
+                <ul>
+                    <li>
+                        <img src="@Tripatlux.Business.AccountManager.GetPicture().Result" width="50" />
+                        @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                    </li>
+                    <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                </ul>
+            }
+        }
+        else
+        {
+            <ul class="nav navbar-nav navbar-right">
+                <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+            </ul>
+        }*@
+
+        @RenderBody()
+
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.js"></script>
+    <script src="~/Content/js/dialog-polyfill.js"></script>
+    <script src="~/Content/js/app.js"></script>
+
+    @RenderSection("JSBottomSection", required: false)
+</body>
+</html>

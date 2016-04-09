@@ -1,0 +1,36 @@
+﻿@model bool
+
+@section CSSHeadSection {
+    <link href="~/Content/css/app.css" rel="stylesheet" />
+    <link href="~/Content/css/paiement.css" rel="stylesheet" />
+}
+
+
+
+<section id="section-paiement">
+    <span class="page-title">Paiement accepté</span>
+    <div class="subcontent">
+        @if (Model)
+        {
+            <h2>Paiement accepté</h2>
+            <p id="description-message">
+                Votre paiement a été validé. <br />
+                Attention, la validation doit encore être faite par le conducteur pour finaliser la réservation.<br />
+                Vous recevrez un sms et un email de confirmation avec le code de paiement à remettre au conducteur après le trajet effectué.
+                Dans le cas où le conducteur refuse votre réservation , aucune somme d'argent ne vous sera prélevée.
+            </p>
+        }
+        else
+        {
+            <div>
+                <div>Paiement refusé</div>
+            </div>
+        }
+
+        <div id="return-home" class="align-center">
+            <a href="@Url.Action("Index", "Home")" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                Revenir à la page d'accueil
+            </a>
+        </div>
+    </div>
+</section>

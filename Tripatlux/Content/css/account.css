@@ -1,0 +1,31 @@
+﻿body { background-color: #f5f5f5; }
+
+.page-title {
+    display: block;
+    margin: 30px 0 15px;
+}
+
+#trips li {
+    display: block;
+    height: 70px;
+    width: 100%;
+    padding: 15px 15px 10px;
+    border-top: 1px solid rgba(0, 0, 0, .15);
+}
+#trips li:active { background-color: #f3f3f3; }
+#trips li .route-start,
+#trips li .route-end {
+    float: left;
+    height: 40px;
+    width: 45%;
+    font-size: 13px;
+    line-height: 40px;
+    text-align: center
+}
+#trips li .arrow {
+    float: left;
+    height: 40px;
+    width: 10%;
+    background: url('/Content/images/results-list/arrow.png') no-repeat center center;
+}
+a { color: #222; }

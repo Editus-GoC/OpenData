@@ -1,0 +1,160 @@
+﻿#section-informations-bus,
+#section-informations-co{
+    min-height: 175px;
+    overflow: hidden;
+    position: relative;
+
+    width: 375px;
+    margin: 0 auto;
+}
+#section-informations-bus{
+    background: url(../images/informations/deco-bus2.jpg) no-repeat center 0 transparent;
+}
+#section-informations-co{
+    background: url(../images/informations/deco-co.jpg) no-repeat center 0 transparent;
+    padding-bottom: 50px;
+}
+#section-informations-bus #circle-bus,
+#section-informations-co #circle-co{
+    position: absolute;
+    top: 135px;
+    left: calc(50% - 40px);
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px #dcdcdc;
+}
+#section-informations-bus #date-hours,
+#section-informations-co #date-hours{
+    background-color: #ffffff;
+    width: 100%;
+    margin-top: 175px;
+    padding: 55px 15px 15px;
+    text-align: center;
+    font-size: 18px;
+}
+#section-informations-bus #date-hours #hours-end,
+#section-informations-co #date-hours #hours-end{
+    font-size: 13px;
+}
+#section-informations-bus #num-bus{
+    text-align: center;
+    font-size: 17px;
+}
+#section-informations-co #km-co{
+    text-align: center;
+    font-size: 15px;
+}
+#section-informations-bus #price-bus{
+    text-align: center;
+    font-size: 17px;
+    color: #4D8CF3;
+    margin-top: 15px;
+    font-weight: bold;
+}
+#section-informations-co #price-co{
+    text-align: center;
+    font-size: 18px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+#section-informations-co #place-co{
+    text-align: center;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+#section-informations-bus #itinerary-title,
+#section-informations-co #itinerary-title {
+    border-top: 1px solid #dcdcdc;
+    font-size: 17px;
+    margin: 25px 0 0;
+    padding-top: 20px;
+    text-align: center;
+}
+
+
+#section-informations-co #cd-timeline {
+    margin-top: 0;
+    padding-top: 1em;
+}
+
+
+
+#section-informations-co .block-driver{
+    padding: 15px 0;
+    border-top: 1px solid #dcdcdc;
+    margin: 7px 15px 0;
+}
+
+#section-informations-co .photo-driver{
+    float: left;
+}
+#section-informations-co .photo-driver img{
+    border-radius: 50%;
+}
+#section-informations-co .infos-driver-1{
+    float: left;
+    margin-left: 10px;
+}
+#section-informations-co .infos-driver-1 .infos-driver-name{
+    font-size: 16px
+}
+#section-informations-co .infos-driver-1 .infos-driver-old{
+    font-size: 14px;
+    color: #777777;
+    display: block;
+    margin-top: 2px;
+}
+#section-informations-co .infos-driver-1 .block-note{
+    margin-top: 5px;
+    font-size: 15px;
+    color: #777777;
+}
+#section-informations-co .infos-driver-1 .note{
+    background: url("../images/app/star.png") no-repeat 0 3px transparent;
+    background-size: 13px 14px;
+    padding-left: 17px;
+}
+#section-informations-co .infos-driver-2{
+    float: right;
+}
+
+#section-informations-co #comment-driver{
+    padding: 15px 0;
+    border-top: 1px solid #dcdcdc;
+    margin: 7px 15px 0;
+}
+#section-informations-co #comment-driver h2{
+    margin-bottom: 5px
+}
+#section-informations-co #comment-driver p{
+    font-size: 15px;
+}
+
+#section-informations-co #sub-block-driver{
+    margin-bottom: 15px;
+}
+#section-informations-co #travel,
+#section-informations-co #inscription,
+#section-informations-co #last-connect,
+#section-informations-co #car{
+    padding: 10px 0;
+    border-top: 1px solid #dcdcdc;
+    margin: 3px 0;
+    color: #777777;
+    font-size: 13px;
+}
+
+#validate-reservation{
+    position: fixed;
+    bottom: 0;
+    padding: 15px;
+    width: 100%;
+    background-color: #f3f3f3;
+    text-align: center;
+}
+#validate-reservation #submit{
+    padding: 0 75px;
+}
+

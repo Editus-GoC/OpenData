@@ -1,0 +1,595 @@
+{
+   "geocoded_waypoints" : [
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJRVx_reQ2lUcR8G0F0dbRAAQ",
+         "types" : [ "locality", "political" ]
+      },
+      {
+         "geocoder_status" : "OK",
+         "partial_match" : true,
+         "place_id" : "ChIJC-sH48VMlUcRDmgYHtDIR5k",
+         "types" : [ "sublocality_level_1", "sublocality", "political" ]
+      },
+      {
+         "geocoder_status" : "OK",
+         "place_id" : "ChIJL4pJ-JFLlUcRsG4F0dbRAAQ",
+         "types" : [ "locality", "political" ]
+      },
+      {
+         "geocoder_status" : "OK",
+         "partial_match" : true,
+         "place_id" : "ChIJC-sH48VMlUcRDmgYHtDIR5k",
+         "types" : [ "sublocality_level_1", "sublocality", "political" ]
+      }
+   ],
+   "routes" : [
+      {
+         "bounds" : {
+            "northeast" : {
+               "lat" : 49.6462458,
+               "lng" : 6.1299689
+            },
+            "southwest" : {
+               "lat" : 49.47845,
+               "lng" : 5.9907245
+            }
+         },
+         "copyrights" : "Données cartographiques ©2016 Google",
+         "legs" : [
+            {
+               "distance" : {
+                  "text" : "28,3 km",
+                  "value" : 28302
+               },
+               "duration" : {
+                  "text" : "22 minutes",
+                  "value" : 1324
+               },
+               "end_address" : "Capellen, Mamer, Luxembourg",
+               "end_location" : {
+                  "lat" : 49.6462458,
+                  "lng" : 5.9907432
+               },
+               "start_address" : "Dudelange, Luxembourg",
+               "start_location" : {
+                  "lat" : 49.47846999999999,
+                  "lng" : 6.08592
+               },
+               "steps" : [
+                  {
+                     "distance" : {
+                        "text" : "1,3 km",
+                        "value" : 1337
+                     },
+                     "duration" : {
+                        "text" : "2 minutes",
+                        "value" : 129
+                     },
+                     "end_location" : {
+                        "lat" : 49.4799753,
+                        "lng" : 6.103936399999999
+                     },
+                     "html_instructions" : "Prendre la direction \u003cb\u003eest\u003c/b\u003e sur \u003cb\u003eRoute de Zoufftgen\u003c/b\u003e/\u003cb\u003eCR160\u003c/b\u003e vers \u003cb\u003eRue du Commerce\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eTraverser le rond-point\u003c/div\u003e",
+                     "polyline" : {
+                        "points" : "mw~lH_tcd@BsB?SEiDKsDMkCEy@KkCAODqAJoEPwGB_ABk@@kBGcAIq@UyBCc@Aa@Aw@LmD@_BEgBCq@SgB?Ke@}BK_@_@qB@C@E?C@E?EAEAEACACCCAASmCIw@QkAS_CYsCAMUqAIc@SaA"
+                     },
+                     "start_location" : {
+                        "lat" : 49.47846999999999,
+                        "lng" : 6.08592
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "1,6 km",
+                        "value" : 1640
+                     },
+                     "duration" : {
+                        "text" : "2 minutes",
+                        "value" : 101
+                     },
+                     "end_location" : {
+                        "lat" : 49.4886924,
+                        "lng" : 6.1172303
+                     },
+                     "html_instructions" : "Continuer sur \u003cb\u003eCR161\u003c/b\u003e",
+                     "polyline" : {
+                        "points" : "{`_mHsdgd@EQO_@c@gAe@eAIGCGgB{DoEeJ]{@Sg@Oc@Sw@@KYoA?CEY_@kDEa@Ea@[iDk@{GGSM_BMoAGk@M{@G]Gc@I]Ki@Qq@UaAIa@Us@aAmCaAiCWq@MYEKM[GOM]Yi@OUQUQQQKQIUI[GWAG?Y@SD[NSLIDc@^yAvAaAz@g@Za@Pa@NgAVUFML"
+                     },
+                     "start_location" : {
+                        "lat" : 49.4799753,
+                        "lng" : 6.103936399999999
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "9,5 km",
+                        "value" : 9502
+                     },
+                     "duration" : {
+                        "text" : "6 minutes",
+                        "value" : 364
+                     },
+                     "end_location" : {
+                        "lat" : 49.5705615,
+                        "lng" : 6.1258025
+                     },
+                     "html_instructions" : "Rejoindre \u003cb\u003eA3\u003c/b\u003e",
+                     "maneuver" : "merge",
+                     "polyline" : {
+                        "points" : "iw`mHuwid@yA@}CBu@@u@AiGGw@?sBCqBEcA?}C?}BDq@@oABwADwET{BRaDV{AVsARqBXaALqDv@oEbAsEjAoFnAq@JC?s@LiBZiBRgDTe@BkDFgCES?oBIiAIqBSgBWo@IKCy@MaCe@oEcAeFkAaEu@gB_@gAOa@GA?q@Is@IsBOiAGqACyDAaDHiBJ[BA?[BcC\\iBXgB`@mBb@uCx@eM`E]HGBSFcD`AaAVe@L_B\\[HOBG@IBQDgAPaC\\wALcDNeCBk@?A?I?y@?eBCmAEaBOA?yC[[CaHuAaEuAqCgAeEqBaDoBsCgBiFqEqAeA}BaCcCqCaEcFqBeCwCqDwF_HsCaD_DgDeA}@aCmBaAw@_BcA}CoBmBiAiB_AeAg@mEgBsBs@eA[q@Qe@MyEcAyCg@_BQk@ImHc@uHCiDLcDRoCZsEr@aARg@LkBb@gCr@}Al@iA`@a@LYLyHnD_L|FKDmAj@QH"
+                     },
+                     "start_location" : {
+                        "lat" : 49.4886924,
+                        "lng" : 6.1172303
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "1,5 km",
+                        "value" : 1519
+                     },
+                     "duration" : {
+                        "text" : "1 minute",
+                        "value" : 74
+                     },
+                     "end_location" : {
+                        "lat" : 49.5778462,
+                        "lng" : 6.1189006
+                     },
+                     "html_instructions" : "Rester à \u003cb\u003edroite\u003c/b\u003e à l'embranchement pour continuer sur \u003cb\u003eE25\u003c/b\u003e, suivre \u003cb\u003eE29\u003c/b\u003e/\u003cb\u003eE44\u003c/b\u003e/\u003cb\u003eAéroport\u003c/b\u003e/\u003cb\u003eTrier\u003c/b\u003e/\u003cb\u003eA1\u003c/b\u003e/\u003cb\u003eEttelbruck\u003c/b\u003e/\u003cb\u003eA7\u003c/b\u003e/\u003cb\u003eBruxelles-Liège\u003c/b\u003e/\u003cb\u003eA6\u003c/b\u003e/\u003cb\u003eEsch-sur-Alzette\u003c/b\u003e/\u003cb\u003eA4\u003c/b\u003e",
+                     "maneuver" : "fork-right",
+                     "polyline" : {
+                        "points" : "_wpmHgmkd@Y@}@\\qA`@_AVe@JuB\\a@BI@q@@[?q@Kg@Ma@Q_Ao@aA_Ay@kA{@}Ae@q@eA}A{@w@UMAAA?GCGCGAOEECICSEWC_@?_@B[He@PYNc@\\UTQVU^MVIRGPO`@Mf@I`@Ol@CVG\\Iv@Ef@El@AfA@^@b@Ff@Jr@F\\Lb@Nd@Rn@Rh@Nl@H`@FXB\\Dr@@l@?h@?DANCn@IdBGvACXKzAGbAAbB"
+                     },
+                     "start_location" : {
+                        "lat" : 49.5705615,
+                        "lng" : 6.1258025
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "12,3 km",
+                        "value" : 12277
+                     },
+                     "duration" : {
+                        "text" : "7 minutes",
+                        "value" : 424
+                     },
+                     "end_location" : {
+                        "lat" : 49.63881629999999,
+                        "lng" : 6.012858599999999
+                     },
+                     "html_instructions" : "Rejoindre \u003cb\u003eA6\u003c/b\u003e/\u003cb\u003eE25\u003c/b\u003e",
+                     "maneuver" : "merge",
+                     "polyline" : {
+                        "points" : "qdrmHcbjd@[rIQnE?D]rNK|EAv@ATCzBAn@MpFUjGQ|Eg@xJ]jEObB[`DWdC[`C]lCIn@mAtH}@xES~@sAvFYfAkAlEeApDqAtDoAlDoAbD}B`FuBbEmA|BiCbEU\\EFILGHsAlBq@~@s@~@]b@MPC@?@IHGJwAbBaAfAw@v@cB`BaCrB}BhBg@\\aAr@[RwAx@mC|AgAl@cBt@mAh@s@V{FlBuAZmA\\_@FYFa@H{G|@qEXaFJwDAaCCoFW}CScBQm@Ea@EcAM}BW}@KsAOaFk@UEyDi@sEk@aKqAmG{@iAMu@KIAWCy@OoBSyCa@aGw@mC]e@EoAOm@GiAIm@Gs@Cu@EQA_CCi@?uABmAHuAL_@FQBm@Jw@Rm@N_AXsAh@WLk@Vq@^k@\\g@Z_@Xa@Z[Ve@`@s@p@w@x@_@b@k@n@eArAq@bAkAfBeAfBa@|@CDaAvB_AtB}@vBwA`Ew@bCITe@zAsAjFSdAy@fDGZWrAa@xBSjAUxAG\\c@zCa@|C]~C[`DU`DS~CQxBGpAKdDG~BKjEAhB?fI?f@FlJBxCDpC@nAHfJBnB@jACpECrBCbCI|F?DAzD?tCGhBADATm@bIYzDWpCAVa@jEg@lFKbAs@jGg@`EWjBsBzLsBtJ{@nDs@pC_AjDSv@Ux@}DrMoApEkAfEiA`Ee@jBk@bC[rA{@`Eq@tDm@zD]dC]jCOnAc@fE_@dFUxDQvCMvDErACv@GbE"
+                     },
+                     "start_location" : {
+                        "lat" : 49.5778462,
+                        "lng" : 6.1189006
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0,8 km",
+                        "value" : 806
+                     },
+                     "duration" : {
+                        "text" : "1 minute",
+                        "value" : 60
+                     },
+                     "end_location" : {
+                        "lat" : 49.6412079,
+                        "lng" : 6.002702300000001
+                     },
+                     "html_instructions" : "Prendre la sortie \u003cb\u003e2-Mamer\u003c/b\u003e pour rejoindre \u003cb\u003eRoute d'Arlon\u003c/b\u003e/\u003cb\u003eN6\u003c/b\u003e en direction de \u003cb\u003eCapellen\u003c/b\u003e",
+                     "maneuver" : "ramp-right",
+                     "polyline" : {
+                        "points" : "sa~mHkkuc@ItAGrBGdAEt@KlAI|@OtAIt@Y~BIjAEhA?bA?r@Dz@Dp@?V@V@\\AXC^_@|@{@xB[x@]|@Yz@Sf@c@rAoBvFUl@"
+                     },
+                     "start_location" : {
+                        "lat" : 49.63881629999999,
+                        "lng" : 6.012858599999999
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0,3 km",
+                        "value" : 341
+                     },
+                     "duration" : {
+                        "text" : "1 minute",
+                        "value" : 29
+                     },
+                     "end_location" : {
+                        "lat" : 49.6441577,
+                        "lng" : 6.0018606
+                     },
+                     "html_instructions" : "Au rond-point, prendre la \u003cb\u003e2e\u003c/b\u003e sortie sur \u003cb\u003eRoute de Koerich\u003c/b\u003e/\u003cb\u003eCR109\u003c/b\u003e",
+                     "maneuver" : "roundabout-right",
+                     "polyline" : {
+                        "points" : "qp~mH{ksc@AAAAAAA?AAC?A?A?C?A?A@C?A@A@A@A@A@k@EQ?YIi@E}@BOFkBz@m@XK?oChA_@L"
+                     },
+                     "start_location" : {
+                        "lat" : 49.6412079,
+                        "lng" : 6.002702300000001
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0,9 km",
+                        "value" : 880
+                     },
+                     "duration" : {
+                        "text" : "2 minutes",
+                        "value" : 143
+                     },
+                     "end_location" : {
+                        "lat" : 49.6462458,
+                        "lng" : 5.9907432
+                     },
+                     "html_instructions" : "Prendre \u003cb\u003eà gauche\u003c/b\u003e sur \u003cb\u003eAvenue Grand-Duc Jean\u003c/b\u003e",
+                     "maneuver" : "turn-left",
+                     "polyline" : {
+                        "points" : "_c_nHsfsc@OF@RBJZjBHV@b@?XCx@UrDEp@OxCKdBCj@EhAA\\Ej@cBfOg@hEOlACRCREPWx@m@bCK\\w@xCGJCDCBG@I@[C"
+                     },
+                     "start_location" : {
+                        "lat" : 49.6441577,
+                        "lng" : 6.0018606
+                     },
+                     "travel_mode" : "DRIVING"
+                  }
+               ],
+               "via_waypoint" : []
+            },
+            {
+               "distance" : {
+                  "text" : "7,0 km",
+                  "value" : 6966
+               },
+               "duration" : {
+                  "text" : "13 minutes",
+                  "value" : 809
+               },
+               "end_address" : "Bertrange, Luxembourg",
+               "end_location" : {
+                  "lat" : 49.608245,
+                  "lng" : 6.0508796
+               },
+               "start_address" : "Capellen, Mamer, Luxembourg",
+               "start_location" : {
+                  "lat" : 49.6462458,
+                  "lng" : 5.9907432
+               },
+               "steps" : [
+                  {
+                     "distance" : {
+                        "text" : "0,9 km",
+                        "value" : 866
+                     },
+                     "duration" : {
+                        "text" : "2 minutes",
+                        "value" : 118
+                     },
+                     "end_location" : {
+                        "lat" : 49.6441381,
+                        "lng" : 6.001771100000001
+                     },
+                     "html_instructions" : "Prendre la direction \u003cb\u003esud\u003c/b\u003e sur \u003cb\u003eAvenue Grand-Duc Jean\u003c/b\u003e vers \u003cb\u003eRue J-A Zinnen\u003c/b\u003e",
+                     "polyline" : {
+                        "points" : "ap_nHcaqc@ZBHAFABCBEFKv@yCJ]l@cCVy@DQBSBSNmAf@iEbBgODk@@]DiABk@JeBNyCDq@TsDBy@?YAc@D]YmBCM"
+                     },
+                     "start_location" : {
+                        "lat" : 49.6462458,
+                        "lng" : 5.9907432
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0,3 km",
+                        "value" : 316
+                     },
+                     "duration" : {
+                        "text" : "1 minute",
+                        "value" : 65
+                     },
+                     "end_location" : {
+                        "lat" : 49.6414625,
+                        "lng" : 6.002472699999999
+                     },
+                     "html_instructions" : "Prendre \u003cb\u003eà droite\u003c/b\u003e sur \u003cb\u003eRoute de Koerich\u003c/b\u003e/\u003cb\u003eCR109\u003c/b\u003e",
+                     "maneuver" : "turn-right",
+                     "polyline" : {
+                        "points" : "{b_nHafsc@\\OnCoAHIl@YjB{@NG|@Ch@DXHNJHJXV"
+                     },
+                     "start_location" : {
+                        "lat" : 49.6441381,
+                        "lng" : 6.001771100000001
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "1,1 km",
+                        "value" : 1131
+                     },
+                     "duration" : {
+                        "text" : "1 minute",
+                        "value" : 88
+                     },
+                     "end_location" : {
+                        "lat" : 49.6355049,
+                        "lng" : 6.0144918
+                     },
+                     "html_instructions" : "Au rond-point, prendre la \u003cb\u003e2e\u003c/b\u003e sortie sur \u003cb\u003eRoute d'Arlon\u003c/b\u003e/\u003cb\u003eN6\u003c/b\u003e",
+                     "maneuver" : "roundabout-right",
+                     "polyline" : {
+                        "points" : "cr~mHmjsc@?B?@?B@B?B@B@@?B@B@@@@@B@@B@@@@@@?@?@?@?@?@?@?@A@AB?@A@A@A@C@A?C@A@C@A?C@C?C?C?A?C?C?C?C?C?CAA?E`A{Ct@}B`AiC~AeEr@cB`@_Af@wAP]f@kAJYDKLYJUDKPe@Vi@b@}@d@iA^s@bCgGr@kBTs@FSDOb@_AlCqGHWLe@Py@Jq@L_A"
+                     },
+                     "start_location" : {
+                        "lat" : 49.6414625,
+                        "lng" : 6.002472699999999
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "2,1 km",
+                        "value" : 2125
+                     },
+                     "duration" : {
+                        "text" : "3 minutes",
+                        "value" : 207
+                     },
+                     "end_location" : {
+                        "lat" : 49.623844,
+                        "lng" : 6.0368781
+                     },
+                     "html_instructions" : "Au rond-point, prendre la \u003cb\u003e1re\u003c/b\u003e sortie et continuer sur \u003cb\u003eRoute d'Arlon\u003c/b\u003e/\u003cb\u003eN6\u003c/b\u003e",
+                     "maneuver" : "roundabout-right",
+                     "polyline" : {
+                        "points" : "{l}mHquuc@DAFAFCFCDGDGBGDI@KBK?K?K?KAQfA}@PMFGDGNWl@eAR_@r@{A\\}@Tg@bC}FL[r@cB^aAXy@h@aBLc@l@kBNa@j@}ABGb@iAlDcLHUPo@Ru@\\gA^sAN_@HWLa@p@uBX_At@eCTu@tCyJ`@wAJ]Z_A`AeD`@uAN]PMTS@@@@@@@?@@@?B@@A@?@?@?@A@??A@?@A@??A@A?A@A?A@A?A@A?C?A@A?A?C?A?A?A?C?A?A?AAC?AACNm@XsANk@r@iAd@w@b@{@j@mANSp@yADYVg@PY\\m@HKrAwARU\\]`@Yt@OZI"
+                     },
+                     "start_location" : {
+                        "lat" : 49.6355049,
+                        "lng" : 6.0144918
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "1,0 km",
+                        "value" : 952
+                     },
+                     "duration" : {
+                        "text" : "1 minute",
+                        "value" : 81
+                     },
+                     "end_location" : {
+                        "lat" : 49.6216969,
+                        "lng" : 6.047661
+                     },
+                     "html_instructions" : "Au rond-point, prendre la \u003cb\u003e2e\u003c/b\u003e sortie et continuer sur \u003cb\u003eRoute d'Arlon\u003c/b\u003e/\u003cb\u003eN6\u003c/b\u003e",
+                     "maneuver" : "roundabout-right",
+                     "polyline" : {
+                        "points" : "_d{mHoazc@@B@BB@@BB@@@B@B?B@B?BA@?BABABA@CBC@ABG@C@C@E@E?E@E?E?Et@e@\\Qb@S@Al@Yd@[\\W^[VWRWT_@HOLUFMHSL_@Li@ToAFk@Fu@Bu@@mAAkAGqBE}AC}@OuEQ_GMaEA_AQyFC_A"
+                     },
+                     "start_location" : {
+                        "lat" : 49.623844,
+                        "lng" : 6.0368781
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "1,6 km",
+                        "value" : 1576
+                     },
+                     "duration" : {
+                        "text" : "4 minutes",
+                        "value" : 250
+                     },
+                     "end_location" : {
+                        "lat" : 49.608245,
+                        "lng" : 6.0508796
+                     },
+                     "html_instructions" : "Prendre \u003cb\u003eà droite\u003c/b\u003e sur \u003cb\u003eRue de Mamer\u003c/b\u003e/\u003cb\u003eCR163\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eContinuer de suivre CR163\u003c/div\u003e",
+                     "maneuver" : "turn-right",
+                     "polyline" : {
+                        "points" : "svzmH{d|c@vAk@h@KvAMvHKfIIh@ONGp@WVKZIf@Gh@G~@A\\?x@?Z@XBz@Jr@Jx@JRFN@H@@?VDRBvAJt@A`@Ef@QdAWd@QvAi@f@ULEl@Q`@GTCHKH]HqA@]Fa@Pa@TSd@Ef@GXCf@Cn@I`AWf@M~A]t@UZG"
+                     },
+                     "start_location" : {
+                        "lat" : 49.6216969,
+                        "lng" : 6.047661
+                     },
+                     "travel_mode" : "DRIVING"
+                  }
+               ],
+               "via_waypoint" : []
+            },
+            {
+               "distance" : {
+                  "text" : "7,0 km",
+                  "value" : 7017
+               },
+               "duration" : {
+                  "text" : "14 minutes",
+                  "value" : 852
+               },
+               "end_address" : "Capellen, Mamer, Luxembourg",
+               "end_location" : {
+                  "lat" : 49.6462458,
+                  "lng" : 5.9907432
+               },
+               "start_address" : "Bertrange, Luxembourg",
+               "start_location" : {
+                  "lat" : 49.608245,
+                  "lng" : 6.0508796
+               },
+               "steps" : [
+                  {
+                     "distance" : {
+                        "text" : "1,6 km",
+                        "value" : 1575
+                     },
+                     "duration" : {
+                        "text" : "5 minutes",
+                        "value" : 293
+                     },
+                     "end_location" : {
+                        "lat" : 49.62170889999999,
+                        "lng" : 6.0478307
+                     },
+                     "html_instructions" : "Prendre la direction \u003cb\u003enord\u003c/b\u003e sur \u003cb\u003eRue de Leudelange\u003c/b\u003e/\u003cb\u003eCR163\u003c/b\u003e vers \u003cb\u003eRue Schauwenburg\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eContinuer de suivre CR163\u003c/div\u003e",
+                     "polyline" : {
+                        "points" : "obxmH_y|c@[Fu@T_B\\g@LaAVo@Hg@BYBg@Fe@DURQ`@G`@A\\IpAI\\IJUBa@Fm@PMDg@TwAh@e@PeAVg@Pa@Du@@wAKSCWEA?IAOASGy@Ks@K{@KYC[Ay@?]?_A@i@Fg@F[HWJq@VOFi@NgIHwHJwALi@JyAH"
+                     },
+                     "start_location" : {
+                        "lat" : 49.608245,
+                        "lng" : 6.0508796
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0,9 km",
+                        "value" : 905
+                     },
+                     "duration" : {
+                        "text" : "1 minute",
+                        "value" : 75
+                     },
+                     "end_location" : {
+                        "lat" : 49.6235417,
+                        "lng" : 6.037316499999999
+                     },
+                     "html_instructions" : "Prendre \u003cb\u003eà gauche\u003c/b\u003e sur \u003cb\u003eRoute d'Arlon\u003c/b\u003e/\u003cb\u003eN6\u003c/b\u003e",
+                     "maneuver" : "turn-left",
+                     "polyline" : {
+                        "points" : "uvzmH}e|c@OBDb@BfABlA@?DbBBnANhGR`HFzBFzALhE@|ACtAEbAIl@Ih@Op@Wx@ADWl@]j@a@d@u@n@YTg@T{@`@a@T]Ng@N"
+                     },
+                     "start_location" : {
+                        "lat" : 49.62170889999999,
+                        "lng" : 6.0478307
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "2,1 km",
+                        "value" : 2109
+                     },
+                     "duration" : {
+                        "text" : "4 minutes",
+                        "value" : 216
+                     },
+                     "end_location" : {
+                        "lat" : 49.6352245,
+                        "lng" : 6.0151135
+                     },
+                     "html_instructions" : "Au rond-point, prendre la \u003cb\u003e2e\u003c/b\u003e sortie et continuer sur \u003cb\u003eRoute d'Arlon\u003c/b\u003e/\u003cb\u003eN6\u003c/b\u003e",
+                     "maneuver" : "roundabout-right",
+                     "polyline" : {
+                        "points" : "cb{mHgdzc@CCACCACCAACAC?C?C?C?A?A?A@A@A?C@A@A@ABCBABABADABAD?DAD?D?FYVk@f@a@X]\\STsAvAIJ]l@QXWf@KPq@xAIZk@lAc@z@e@v@s@hAOPIR]rAM`@A??AA?A?AAA?A?A?A??@A?A?A@A@A??@A@A??@A@?@A@?@AB?@?@A@?@?B?@?@?@?B?@?BKLEHEHEVO\\a@tAaAdD[~@K\\a@vAuCxJUt@u@dCY~@q@tBM`@IVO^_@rA]fASt@Qn@ITmDbLc@hACFk@|AO`@m@jBMb@i@`BYx@_@`As@bBMZcC|FUf@]|@s@zAS^m@dAOVEFGFQLgA|@"
+                     },
+                     "start_location" : {
+                        "lat" : 49.6235417,
+                        "lng" : 6.037316499999999
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "1,2 km",
+                        "value" : 1207
+                     },
+                     "duration" : {
+                        "text" : "2 minutes",
+                        "value" : 96
+                     },
+                     "end_location" : {
+                        "lat" : 49.6412079,
+                        "lng" : 6.002702300000001
+                     },
+                     "html_instructions" : "Au rond-point, prendre la \u003cb\u003e2e\u003c/b\u003e sortie et continuer sur \u003cb\u003eRoute d'Arlon\u003c/b\u003e/\u003cb\u003eN6\u003c/b\u003e",
+                     "maneuver" : "roundabout-right",
+                     "polyline" : {
+                        "points" : "ck}mHmyuc@CKCIEIEGEEEEGCGCG?G?G@EBGDEDEFEHCHERAJ?J?J@J@JBHBHBHDFDDFDFBF@F@M~@Kp@Qx@Md@IVmCpGc@~@]p@k@xAa@|@q@|A}ApDO`@g@jAUd@[v@MZEHKRMXEHSb@a@bA[t@e@hA_@|@{@xB[x@]|@Yz@Sf@c@rAoBvFUl@"
+                     },
+                     "start_location" : {
+                        "lat" : 49.6352245,
+                        "lng" : 6.0151135
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0,3 km",
+                        "value" : 341
+                     },
+                     "duration" : {
+                        "text" : "1 minute",
+                        "value" : 29
+                     },
+                     "end_location" : {
+                        "lat" : 49.6441577,
+                        "lng" : 6.0018606
+                     },
+                     "html_instructions" : "Au rond-point, prendre la \u003cb\u003e2e\u003c/b\u003e sortie sur \u003cb\u003eRoute de Koerich\u003c/b\u003e/\u003cb\u003eCR109\u003c/b\u003e",
+                     "maneuver" : "roundabout-right",
+                     "polyline" : {
+                        "points" : "qp~mH{ksc@AAAAAAA?AAC?A?A?C?A?A@C?A@A@A@A@A@k@EQ?YIi@E}@BOFkBz@m@XK?oChA_@L"
+                     },
+                     "start_location" : {
+                        "lat" : 49.6412079,
+                        "lng" : 6.002702300000001
+                     },
+                     "travel_mode" : "DRIVING"
+                  },
+                  {
+                     "distance" : {
+                        "text" : "0,9 km",
+                        "value" : 880
+                     },
+                     "duration" : {
+                        "text" : "2 minutes",
+                        "value" : 143
+                     },
+                     "end_location" : {
+                        "lat" : 49.6462458,
+                        "lng" : 5.9907432
+                     },
+                     "html_instructions" : "Prendre \u003cb\u003eà gauche\u003c/b\u003e sur \u003cb\u003eAvenue Grand-Duc Jean\u003c/b\u003e",
+                     "maneuver" : "turn-left",
+                     "polyline" : {
+                        "points" : "_c_nHsfsc@OF@RBJZjBHV@b@?XCx@UrDEp@OxCKdBCj@EhAA\\Ej@cBfOg@hEOlACRCREPWx@m@bCK\\w@xCGJCDCBG@I@[C"
+                     },
+                     "start_location" : {
+                        "lat" : 49.6441577,
+                        "lng" : 6.0018606
+                     },
+                     "travel_mode" : "DRIVING"
+                  }
+               ],
+               "via_waypoint" : []
+            }
+         ],
+         "overview_polyline" : {
+            "points" : "mw~lH_tcd@BgCQ}Ia@aJf@yRDwCQuB]wFNmGIyCeAqG[_CKe@cAqK{@wGmA{D{CqGqGmNk@wCoCcYk@uEo@}CwBeHmBaF}@sBeAiA{A]qAV{CjCiBvAcA`@}A^MLyA@sED_IIaJImIFgDHsIh@}Fn@eEl@sFdAcLnCyIhBsEn@mEXsH@cCIsI_AwK{BwQqDiC[}DWkGEiHXqJ|AcG|AcNjEaGdBqDx@kB\\yEj@iHRw@?_DCoDU{C[}HyAsI}CgJaFsCgBiFqEoEgEoQmTkKaMeFeFcEeD}FsDwEiCsGoCqGoBsJkBkC[mHc@uHCmI`@cJnAiB`@sFvAgDnA{@ZyUlLyAp@k@JuFbBsEd@mAKiA_@aCoBuBiDkBoCqAeASIg@OkBEaAZ}@l@kAdBo@nBe@dCWtEV~CnBjHJhDOjD_@pGo@lSwAhm@y@vQm@nHmBvPiD~R_G~TaDbJmEdKcE`I_D`FkBlCqCtDUXuHdIiJnHiIxEqD~AoHdC}EhA}HfAsLd@yHEmKk@wFk@qN_B}d@eGaZuDyE]qFKcDLuBTeDr@wEhBeDrBwCfCiE`FeFpIcEjJ_EvLiDtNcBrJkBvNwA|Qg@bQDfYTbVA`OObQKzGaBhTiChW_AlHgFpXcEdPoJf\\wDdOmBvJkA`Im@zEcAlL{@|Q]dMc@fG}@vI?|FH~BEx@{AvDgBzEkDvJSEQJaCUmAJyCtAkE~Aj@bDWjHe@|IGfBiBrP_A~HwAlFgAnDQB[CZBPCFIxBgId@sB`DkYVyFn@yLA}@D]YmBCM\\OxCyAxCuAlAKbANXVX`@JXPJPENs@AMxDiLhHqQrDgIvKuXx@qE\\KTa@Do@A]xAkAjAmB`JaTbF}NtHsVhJc[nCyIh@_@LFJEN_@ASf@gCbAuBhAsBz@aBv@sBpA{BfDeDtAQZLXQLm@t@k@`Ae@rBoA`BkBh@gAx@eEJeGuA_f@C_AvAk@`CY~RUx@WlCu@`EIlGt@dCTvAGlBi@rDwAnBi@\\oDf@u@lAM`AGpBa@xEiAyEhAqB`@aAFmALg@t@]nDoBh@sDvAmBh@wAFeCUmGu@aEHmCt@y@V_STkFf@|@x[^~N]pFaA~C_ApAoAdAcD|Ak@JEEMGM?QLOf@eAlAgDdDqAzBsBtEmCnEw@hCICSNERQf@_Pvh@cIlWoGpQeE~JeCxEgBzASg@[S]DY\\Kt@Fl@R`@^Ly@pEwLbYwC~GuFbNyFvOSCIDq@?k@IgBAuD|AoDvAOF@R^vBJz@_@xHe@tJsCzW]fCiCtJWVe@A"
+         },
+         "summary" : "A3 et A6",
+         "warnings" : [],
+         "waypoint_order" : [ 0, 1 ]
+      }
+   ],
+   "status" : "OK"
+}

@@ -1,0 +1,88 @@
+﻿body { background-color: #f5f5f5; }
+
+.page-title {
+    display: block;
+    margin: 100px 0 20px;
+}
+
+#categories {
+    width: 330px;
+    margin: 0 auto;
+}
+#categories li {
+    float: left;
+    height: 135px;
+    width: 135px;
+    margin: 15px;
+    text-align: center;
+}
+#categories li a.category-movie { background: url('/Content/images/app/category-movie.jpg') no-repeat center center; background-size: 100% 100%; }
+#categories li a.category-concert { background: url('/Content/images/app/category-concert.jpg') no-repeat center center; background-size: 100% 100%; }
+#categories li a.category-nightclub { background: url('/Content/images/app/category-nightclub.jpg') no-repeat center center; background-size: 100% 100%; }
+#categories li a.category-bar { background: url('/Content/images/app/category-bar.jpg') no-repeat center center; background-size: 100% 100%; }
+#categories li a {
+    display: table;
+    height: 135px;
+    width: 135px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21px;
+    text-decoration: none;
+}
+#categories li a span {
+  display: table-cell; 
+  vertical-align: middle; 
+  text-align: center; 
+}
+
+#category li {
+    display: block;
+    height: 70px;
+    width: 100%;
+    padding: 15px 15px 10px;
+    border-top: 1px solid rgba(0, 0, 0, .15);
+}
+#category li:first-child { border-top: none; }
+#category li:active { background-color: #f3f3f3; }
+#category li .logo-container {
+    display: table-cell;
+    float: left;
+    height: 40px;
+    width: 25%;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    line-height: 40px;
+    text-align: center;
+}
+#category li .logo-container img {
+    max-height: 40px;
+    max-width: 100%;
+    vertical-align: middle;
+}
+#category li .right-container {
+    float: right;
+    height: 25px;
+    width: 75%;
+    padding-left: 10px;
+    font-size: 13px;
+}
+#category li .name-container {
+    height: 20px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+#category li .address-container {
+    height: 15px;
+    width: 100%;
+    font-size: 12px;
+    font-weight: 400;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;   
+}
+a { color: #222; }

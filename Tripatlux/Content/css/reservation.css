@@ -1,0 +1,69 @@
+﻿body {
+    background-color: #F5F5F5;
+}
+
+#app-content {
+    height: auto;
+    padding: 76px 20px 20px;
+}
+
+.subcontent {
+    line-height: 25px;
+}
+
+.subcontent strong {
+    color: #f00224;
+    font-weight: 600;
+}
+
+#driver-picture-container {
+    display: block;
+    height: 60px;
+    width: 60px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    line-height: 60px;
+    overflow: hidden;
+    text-align: center;
+}
+
+#driver-picture-container img {
+    min-height: 60px;
+    width: 60px;
+    vertical-align: middle;
+}
+
+#driver-name {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+#driver-last-connection {
+    margin-bottom: 10px;
+    color: rgba(0, 0, 0, .5);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+#driver-trips {
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 600;
+}
+#driver-trips strong {
+    color: #f00224;
+}
+
+.driver-quotation-star {
+    color: #ffae00;
+}
+
+#places {
+    height: 36px;
+    min-width: 46px;
+    margin-left: 5px;
+    line-height: 36px;
+}

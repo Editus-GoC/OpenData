@@ -1,0 +1,27 @@
+﻿@using Tripatlux.ServiceHackathon
+@model FilmFicheDetail
+
+@section CSSHeadSection {
+    <link href="~/Content/css/app.css" rel="stylesheet" />
+    <link href="~/Content/css/category.css" rel="stylesheet" />
+}
+
+<div>
+    <span>@Model.Titre_Film</span>
+
+    <div>
+        <span>Salle</span>
+        <ul>
+            @foreach(var item in Model.Liste_Salles)
+            {
+                <li>
+                    <a href="@(Url.Action("Salle", "Category", new { id = item.Id_Salle }))">@item.Nom_Salle</a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+@section JSBottomSection {
+    <script src="~/Content/js/categorys.js"></script>
+}

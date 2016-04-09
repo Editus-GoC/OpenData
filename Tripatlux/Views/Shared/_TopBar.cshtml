@@ -1,0 +1,36 @@
+﻿@using Microsoft.AspNet.Identity
+@using Tripatlux.Helpers
+
+<header>
+    <button id="menu-left" class="mdl-button mdl-js-button">
+        <i class="material-icons">dehaze</i>
+    </button>
+    
+    <ul id="side-menu" class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="menu-left">
+        <li><a href="@Url.Action("Index", "Home")">Page d'accueil</a></li>
+        @if (Request.IsAuthenticated)
+        {
+            using (Html.BeginForm("Déconnexion", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+            {
+                @Html.AntiForgeryToken()
+                <li>
+                    @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                </li>
+                <li>
+                    <a href="javascript:document.getElementById('logoutForm').submit()">Se déconnecter</a>
+                </li>
+            }
+        }
+        else
+        {
+            <li><a href="@Url.Action("Index", "Account")">Mon compte</a></li>
+            <li><a href="@Url.Action("Code", "Account")">Saisir un code</a></li>
+        }
+    </ul>
+
+    <a href="@Url.Action("Index", "Account")">
+        <div id="header-profile-picture">
+            <img src="@Url.Action("Avatar", "Account", new { idUser = SessionHelper.CurrentUser.Id })" />
+        </div>
+    </a>
+</header>

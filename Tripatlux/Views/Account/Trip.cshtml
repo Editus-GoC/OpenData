@@ -1,0 +1,66 @@
+﻿@using Tripatlux.Models.DataTrip
+@model Trip
+
+@section CSSHeadSection {
+    <link href="~/Content/css/app.css" rel="stylesheet" />
+    <link href="~/Content/css/account.css" rel="stylesheet" />
+}
+
+@foreach(var pass in Model.Passagers)
+{
+    <div>
+        @if (pass.User.Avatar == null)
+        {
+            <img src="~/Content/images/app/no-photo-driver.png" alt="Photo conducteur" width="30" height="30" />
+        }
+        else
+        {
+            <img src="@Url.Action("Avatar", "Account", new { idUser = pass.User.Id })" alt="Photo conducteur" width="30" height="30" />
+        }
+    </div>
+    <div>@pass.User.Name @pass.User.FirstName</div>
+
+    <div>
+        @if (pass.Validation == null)
+        {
+            <a href="@Url.Action("ValidOk", "Account", new { IdUser = pass.User.Id, IdTrip = Model.Id })" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Valider
+            </a>
+            <a href="@Url.Action("ValidKo", "Account", new { IdUser = pass.User.Id, IdTrip = Model.Id })" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Refuser
+            </a>
+        }
+        else
+        {
+            <div>@(pass.Validation.Value ? "Accepté" : "Refusé")</div>
+        }
+    </div>
+
+    <div>
+        @if (!pass.PaySend)
+        {
+            <span>Saisir le code</span>
+            <form method="post" action="@Url.Action("Code", "Account")">
+                <div>
+                    <input type="hidden" name="IdUser" value="@pass.User.Id" />
+                    <input type="hidden" name="IdTrip" value="@Model.Id" />
+                    <input type="text" name="Code" value="" />
+                    <input type="submit" value="Valider" />
+                </div>
+            </form>
+        }
+        else
+        {
+            <div>Code déjà saisie</div>
+        }
+    </div>
+}
+
+@if (Model.Passagers.Count == 0)
+{
+    <div>Pas de passager pour l'instan</div>
+}
+
+@section JSBottomSection {
+    <script src="~/Content/js/account.js"></script>
+}

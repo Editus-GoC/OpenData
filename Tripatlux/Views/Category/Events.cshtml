@@ -1,0 +1,14 @@
+﻿@using Tripatlux.ServiceHackathon
+@model List<Event>
+
+<div>
+    <ul>
+        @foreach (var eve in Model)
+        {
+            <li>
+                <img src="http://www.agenda24.lu/image?id=@eve.IdEvent" width="50" />
+                <span>@eve.Name</span>
+            </li>
+        }
+    </ul>
+</div>

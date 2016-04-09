@@ -1,0 +1,62 @@
+﻿@using Tripatlux.Models.Search
+@using Tripatlux.Models.DataTrip
+@using Tripatlux.Helpers
+@model SearchResult
+
+@section CSSHeadSection {
+    <link href="~/Content/css/app.css" rel="stylesheet" />
+    <link href="~/Content/css/results-list.css" rel="stylesheet" />
+}
+
+@section JSBottomSection {
+    <script src="~/Content/js/results-list.js"></script>
+}
+
+
+<section id="section-results-list">
+    <div id="header-results-list">
+        <div id="block-route" class="float-left">
+            <div id="route">
+                <span id="route-start">@SessionHelper.LastSearchResult.Request.CityStart</span>
+                <img class="deco-arrow" src="~/Content/images/results-list/arrow.png" alt="" width="6" height="9" />
+                <span id="route-end">@SessionHelper.LastSearchResult.Request.CityEnd</span>
+            </div>
+            <span id="nb-results">@Model.TotalItems résultat@(Model.TotalItems > 1 ? "s" : "")</span>
+        </div>
+        <div id="block-filter" class="float-right">
+            <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
+                <i class="material-icons">more_horiz</i>
+            </button>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+                <li class="mdl-menu__item">Bus</li>
+                <li class="mdl-menu__item">Covoiturage</li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div id="settings" data-tempo-paginate="0" data-statut-paginate="true"></div>
+    <ul id="results-list">     
+        @{
+            if (Model.Items.Count > 0)
+            {
+                Html.RenderPartial("_RefreshItems", Model.GetPage(1).ToList());
+            }
+            else
+            {
+                <li id="no-result">
+                    <p>Désolé, nous n'avons aucun bus ou covoiturage disponible.</p>
+                    <p>Nous vous proposons de rechercher un taxi autour de vous.</p>
+                    <a href="http://www.editus.mobi/fr/recherche?q=taxi+@SessionHelper.LastSearchResult.Request.CityStart" id="link-taxi" target="_blank" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                        Lancer recherche taxi
+                    </a>
+                    <small>Vous allez être redirigé vers editus.lu</small>
+                </li>
+            }
+        }
+    </ul>
+    <div class="clear"></div>
+    <div id="loader-results">
+        <img src="~/Content/images/results-list/loader.gif" alt="loader" width="45" height="45" />
+    </div>
+    <div class="clear"></div>
+</section>

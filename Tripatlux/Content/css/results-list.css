@@ -1,0 +1,164 @@
+﻿body{
+    background-color: #F5F5F5;
+}
+
+#section-results-list{
+}
+#section-results-list #block-route{
+    margin-left: 15px;
+}
+#section-results-list #block-filter{
+    margin-right: 15px;
+}
+#section-results-list #route{
+    margin-bottom: 5px;
+}
+#section-results-list #nb-results{
+    display: block;
+    font-size: 13px;
+}
+#header-results-list {
+    /*border-bottom: 1px solid #DCDCDC;*/
+    padding: 7px 0;
+    background-color: #F5F5F5;
+}
+#results-list {
+    margin-top: 2px;
+}
+#results-list .result-co,
+#results-list .result-bus{
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    padding: 15px 0;
+    border-bottom: 1px solid #dcdcdc;
+    position: relative;
+}
+#results-list .result-co a,
+#results-list .result-bus a{
+    color: #000000;
+}
+#results-list .color {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px; 
+}
+#results-list .result-co .color{
+    background-color: #F00224;
+}
+#results-list .result-bus .color{
+    background-color: #4D8CF3;
+}
+
+#results-list .deco-arrow{
+    vertical-align: middle;
+}
+#results-list .result-block-route{
+    margin: 0 15px;
+}
+#results-list .result-block-1{
+    float: left;
+}
+#results-list .result-block-1 .hours-start{
+    font-weight: bold;
+}
+#results-list .result-block-1 .hours-end{
+    font-size: 12px;
+}
+#results-list .result-block-1 .route-block{
+    font-size: 13px;
+    margin-top: 5px;
+}
+#results-list .result-block-1 .nb-square,
+#results-list .infos-driver-1  .infos-driver-num-bus{
+    font-size: 11px;
+    margin-top: 5px;
+    color: #777777;
+}
+#results-list .infos-driver-1 .infos-driver-num-bus{
+    margin-top: 10px;
+}
+
+
+#results-list .result-block-2{
+    float: right;
+}
+#results-list .result-block-2>*{
+    display: block;
+    text-align: right;
+}
+#results-list .result-block-2 .price{
+    font-weight: bold;
+}
+#results-list .result-block-2 .time,
+#results-list .result-block-2 .km{
+    font-size: 11px;
+    margin-top: 5px;
+    color: #777777;
+}
+
+
+#results-list .result-block-driver{
+    padding-top: 7px;
+    border-top: 1px solid #dcdcdc;
+    margin: 7px 15px 0;
+}
+
+#results-list .photo-driver{
+    float: left;
+}
+#results-list .photo-driver img{
+    border-radius: 50%;
+}
+#results-list .infos-driver-1{
+    float: left;
+    margin-left: 5px;
+}
+#results-list .infos-driver-1 .infos-driver-name{
+    font-size: 13px
+}
+#results-list .infos-driver-1 .infos-driver-old{
+    font-size: 12px;
+    color: #777777;
+}
+#results-list .infos-driver-1 .block-note{
+    margin-top: 5px;
+    font-size: 11px;
+    color: #777777;
+}
+#results-list .infos-driver-1 .note{
+    background: url("../images/app/star.png") no-repeat 0 0 transparent;
+    background-size: 13px 14px;
+    padding-left: 17px;
+}
+#results-list .infos-driver-2{
+    float: right;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+
+#section-results-list #loader-results{
+    height: 45px;
+    text-align: center;
+    display: none;
+}
+
+#no-result{
+    padding:10px;
+    text-align: center;
+    font-size: 15px;
+    background-color: #ffffff;
+}
+#no-result #link-taxi{
+    margin-top: 15px;
+}
+#no-result small{
+    display: block;
+    font-size: 9px;
+    margin-top: 5px;
+}
+
+
+

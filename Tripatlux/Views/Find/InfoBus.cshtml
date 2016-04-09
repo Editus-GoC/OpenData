@@ -1,0 +1,58 @@
+﻿@using Tripatlux.Models.DataBus
+@model Way
+
+@section CSSHeadSection {
+    <link href="~/Content/css/app.css" rel="stylesheet" />
+    <link href="~/Content/css/timeline.css" rel="stylesheet" />
+    <link href="~/Content/css/informations.css" rel="stylesheet" />
+}
+
+@section JSBottomSection {
+    <script src="~/Content/js/timeline.js"></script>
+}
+
+
+
+<section id="section-informations-bus" class="section-informations">
+    <div id="circle-bus">
+        <img width="50" height="50" alt="Photo Bus" src="~/Content/images/informations/bus.png" />
+    </div>
+    <div id="date-hours">
+        <span id="hours-start">Aujourd'hui à @Model.StepStart.GetTimeStr()</span>
+        <img class="deco-arrow" src="~/Content/images/results-list/arrow.png" alt="" width="6" height="9" />      
+        <span id="hours-end">@Model.StepEnd.GetTimeStr()</span>
+    </div>
+    <div id="num-bus">
+        Bus n° : @Model.StepStart.Step.Parcours.Line.Number
+    </div>
+    <div id="price-bus">
+        Prix : 5,00€
+    </div>
+
+    <div id="itinerary-title">
+        Itinéraire
+    </div>
+    <section id="cd-timeline" class="cd-container">
+
+        @foreach (var item in Model.WaySteps)
+        {
+            <div class="cd-timeline-block">
+                <div class="cd-timeline-img @(item == Model.WaySteps.First() ? "cd-start" : (item == Model.WaySteps.Last() ? "cd-end" : "cd-stop"))">
+                    <img src="~/Content/images/informations/cd-icon-marker.svg" alt="start">
+                </div> 
+                <div class="cd-timeline-content">
+                    <h2>@item.Step.BusStop.Name</h2>
+                    @if (item == Model.WaySteps.First())
+                    {
+                        <p>Départ</p>
+                    }
+                    else if (item == Model.WaySteps.Last())
+                    {
+                        <p>Terminus</p>
+                    }
+                    <p class="cd-date">@item.GetTimeStr()</p>
+                </div>
+            </div>
+        }
+    </section> <!-- cd-timeline -->
+</section>

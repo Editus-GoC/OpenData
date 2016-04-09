@@ -1,0 +1,26 @@
+﻿@using Tripatlux.Models.DataTrip
+@model IEnumerable<Trip>
+
+@section CSSHeadSection {
+    <link href="~/Content/css/app.css" rel="stylesheet" />
+    <link href="~/Content/css/account.css" rel="stylesheet" />
+}
+
+<span class="page-title">Mes trajets</span>
+
+<ul id="trips">
+    @foreach (var trip in Model)
+    {
+        <li>
+            <a href="@Url.Action("Trip", "Account", new { Id = trip.Id })">
+                <span class="route-start">@trip.FirstStep.GetCity()</span>
+                <span class="arrow"></span>
+                <span class="route-end">@trip.LastStep.GetCity()</span>
+            </a>
+        </li>
+    }
+</ul>
+
+@section JSBottomSection {
+    <script src="~/Content/js/account.js"></script>
+}
